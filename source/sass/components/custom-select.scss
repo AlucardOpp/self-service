@@ -1,0 +1,556 @@
+.custom-select {
+  position: relative;
+  width: 100%;
+  padding: 44px 0 0 0;
+  border-radius: 20px;
+
+  &.is-focus .custom-select__button,
+  &.is-open .custom-select__button {
+    border-color: $color-default-black;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    transition: transform $trans--300, opacity $trans--300;
+    pointer-events: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 31px;
+    color: $color-eclipse;
+
+    @include vp--1919 {
+      line-height: 24px;
+    }
+
+    @include vp--719 {
+      font-size: 13px;
+      top: -40px;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 67px;
+    left: 25px;
+    transition: transform $trans--300, opacity $trans--300, color $trans--300;
+    pointer-events: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 31px;
+    color: $color-dark-grey;
+
+    @include vp--1919 {
+      top: 57px;
+      left: 20px;
+      line-height: 24px;
+    }
+
+    @include vp--719 {
+      width: calc(100% - 60px);
+      font-size: 15px;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+    }
+  }
+
+  select {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+  }
+
+  &__select {
+    position: relative;
+    border: 1px solid $color-grey;
+    border-radius: 20px;
+
+    @include hover-focus {
+      border-color: $color-default-black;
+    }
+
+    @include vp--1919 {
+      border-radius: 10px;
+    }
+  }
+
+  &__select:focus {
+    outline: none;
+  }
+
+  &__select.is-open {
+    overflow: initial;
+  }
+
+  &__select[data-type*="select-multiple"] .custom-select__inner {
+    cursor: text;
+  }
+
+  &__select [hidden] {
+    display: none;
+  }
+
+  &__inner {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 100%;
+    background-color: $color-transparent;
+    min-height: 80px;
+    padding: 23px 25px 24px 24px;
+    line-height: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 16px;
+    outline: none;
+    transition: border-color $trans--300;
+
+    &::after {
+      content: "";
+      position: absolute;
+      border: 9px solid transparent;
+      border-top: 9px solid $color-silver-2;
+      transition: transform $trans--300, top $trans--100;
+      right: 40px;
+      top: calc(50% + 7px);
+      transform: translateY(-50%);
+    }
+
+
+    @include vp--1919 {
+      min-height: 60px;
+      padding: 17px 25px 17px 19px;
+      border-radius: 10px;
+
+      &::after {
+        top: calc(50% + 3px);
+        right: 24px;
+      }
+    }
+
+    @include vp--1359 {
+      &::after {
+        top: calc(50% + 5px);
+      }
+    }
+
+    @include vp--719 {
+      font-size: 15px;
+      padding-left: 9px;
+      padding-right: 10px;
+
+      &::after {
+        top: calc(50% + 2px);
+        right: 10px;
+        width: 6px;
+        height: 6px;
+        border: 6px solid $color-transparent;
+        border-top: 6px solid $color-silver-2;
+      }
+    }
+  }
+
+  &__select.is-focues,
+  &__select.is-open {
+    border-color: $color-default-black;
+  }
+
+  &__select.is-focused .custom-select__inner,
+  &__select.is-open .custom-select__inner {
+    &::after {
+      top: calc(50% - 12px);
+      transform: rotate(-180deg);
+    }
+
+    @include vp--719 {
+      &::after {
+        top: calc(50% - 10px);
+      }
+    }
+  }
+
+  &__options {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__options--multiple {
+    display: inline;
+  }
+
+  &__options--multiple .custom-select__option {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+    margin-right: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 31px;
+    color: $color-eclipse;
+    word-break: break-all;
+    box-sizing: border-box;
+    cursor: text;
+    position: relative;
+
+    &::after {
+      position: relative;
+      content: ",";
+    }
+
+    &:last-child {
+      margin-right: 15px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    @include vp--1919 {
+      line-height: 24px;
+    }
+
+    @include vp--719 {
+      font-size: 15px;
+    }
+  }
+
+  &__options--dropdown {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    background-color: $color-default-white;
+    border: 1px solid $color-solitude;
+    top: calc(100% + 3px);
+    max-height: 160px;
+    box-shadow: 0 2px 6px $color-slate-grey;
+    border-radius: 20px;
+    overflow: hidden;
+    word-break: break-all;
+    will-change: visibility;
+    transition: visibility $trans--300, opacity $trans--300;
+  }
+
+  &__options--dropdown.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__options--dropdown .custom-select__options {
+    position: relative;
+    max-height: inherit;
+    overflow: auto;
+    padding: 0 18px;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    border-radius: 20px;
+
+    @include vp--1919 {
+      padding: 0 13px;
+    }
+
+    @include vp--719 {
+      padding: 0 13px 0 4px;
+    }
+  }
+
+  &__options--dropdown .custom-select__option {
+    position: relative;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 31px;
+    color: $color-eclipse;
+
+    &::after {
+      display: none;
+    }
+
+    @include vp--1919 {
+      line-height: 24px;
+    }
+
+    @include vp--719 {
+      font-size: 15px;
+    }
+  }
+
+  &__options--dropdown .custom-select__option--selectable {
+    cursor: pointer;
+  }
+
+  &__options--dropdown .custom-select__option--selectable.is-highlighted {
+    transition: opacity $trans--300;
+    opacity: 0.7;
+  }
+
+  &__option {
+    cursor: default;
+  }
+
+  &__input {
+    display: block;
+    background-color: $color-transparent;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 31px;
+    border: none;
+    border-radius: 20px;
+    max-width: 100%;
+    padding: 0;
+    color: $color-eclipse;
+
+    &::placeholder {
+      color: $color-dark-grey;
+    }
+
+    @include vp--1919 {
+      line-height: 24px;
+      border-radius: 10px;
+    }
+
+    @include vp--719 {
+      font-size: 15px;
+    }
+  }
+
+  &__input:focus {
+    outline: 0;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 80px;
+    padding: 25px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 31px;
+    color: $color-eclipse;
+    background-color: $color-transparent;
+    border: 1px solid $color-grey;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color $trans--300;
+    text-align: start;
+
+    @include hover-focus {
+      border-color: $color-default-black;
+    }
+
+    @include vp--1919 {
+      min-height: 60px;
+      padding: 20px 25px 20px 20px;
+      line-height: 24px;
+      border-radius: 10px;
+    }
+
+    @include vp--719 {
+      font-size: 15px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    bottom: -2px;
+    z-index: 1;
+    border-radius: 20px;
+    width: 100%;
+    max-height: 160px;
+    margin: 0;
+    padding: 0 18px;
+    overflow-y: auto;
+    list-style: none;
+    background-color: $color-default-white;
+    border: 1px solid $color-solitude;
+    box-shadow: 0 2px 6px $color-slate-grey;
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility $trans--300, opacity $trans--300;
+
+    @include vp--1919 {
+      padding: 0 13px;
+    }
+
+    @include vp--719 {
+      padding: 0 13px 0 4px;
+    }
+  }
+
+  &__item {
+    padding: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 31px;
+    color: $color-eclipse;
+    transition: opacity $trans--300;
+    outline: none;
+    cursor: pointer;
+
+    &[aria-selected="true"] {
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
+    }
+
+    @include vp--1919 {
+      line-height: 24px;
+    }
+
+    @include vp--719 {
+      font-size: 15px;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    position: relative;
+    width: 23px;
+    height: 13px;
+    margin-left: auto;
+    background-color: $color-transparent;
+    transition: transform $trans--300;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border: 9px solid $color-transparent;
+      border-top: 9px solid $color-silver-2;
+      transition: transform $trans--300, top $trans--100;
+      right: 15px;
+      top: 3px;
+    }
+
+    @include vp--1919 {
+      &::after {
+        right: 0;
+      }
+    }
+
+    @include vp--719 {
+      &::after {
+        width: 6px;
+        height: 6px;
+        border: 6px solid $color-transparent;
+        border-top: 6px solid $color-silver-2;
+        top: 2px;
+      }
+    }
+  }
+
+  &.open-up {
+    .custom-select__list {
+      bottom: auto;
+      top: 0;
+      transform: translateY(calc(-100% + 30px));
+    }
+  }
+
+  &.is-open {
+    .custom-select__list {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .custom-select__icon {
+      &::after {
+        top: -7px;
+        transform: rotate(180deg);
+      }
+
+      @include vp--719 {
+        &::after {
+          top: -4px;
+        }
+      }
+    }
+
+    .custom-select__label {
+      opacity: 0;
+    }
+  }
+
+  &.not-empty {
+    .custom-select__text {
+      opacity: 1;
+    }
+
+    .custom-select__label {
+      opacity: 0;
+    }
+
+    .custom-select__button {
+      padding-top: 21px;
+      padding-bottom: 22px;
+
+      @include vp--1919 {
+        padding-top: 15px;
+        padding-bottom: 16px;
+      }
+    }
+
+    .custom-select__placeholder {
+      opacity: 0;
+    }
+  }
+
+  &--placeholder {
+    .custom-select__label {
+      opacity: 1;
+    }
+
+    &.is-open .custom-select__label {
+      opacity: 1;
+    }
+
+    &.not-empty .custom-select__label {
+      opacity: 1;
+    }
+  }
+
+  &.slide-up.not-empty,
+  &.slide-up.is-open {
+    .custom-select__label {
+      transform: translateY(calc(-50% - 40px));
+      opacity: 1;
+    }
+
+    .custom-select__text {
+      opacity: 1;
+    }
+  }
+
+  @include vp--1919 {
+    padding-top: 40px;
+    margin-bottom: 34px;
+    border-radius: 10px;
+  }
+
+  @include vp--719 {
+    padding-top: 0;
+    margin-bottom: 74px;
+  }
+}

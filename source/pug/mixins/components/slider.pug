@@ -1,0 +1,20 @@
+mixin slider(data, mod)
+  .slider(class!= `slider--${mod}`)&attributes(attributes)
+    .slider__container.swiper-container(data-slider=`${mod}`)
+
+      if mod === 'default'
+        .slider__wrapper.swiper-wrapper
+          each it, i in data
+            .slider__item.swiper-slide
+              h2(style='height: 100px')= i
+        .slider__btn-wrapper
+          .slider__btn.slider__btn--prev
+          .slider__btn.slider__btn--next
+        .swiper-pagination.slider__pagination
+
+      if mod === 'clients'
+        .slider__wrapper.swiper-wrapper
+          each it in data
+            .slider__item.swiper-slide
+              .slider__img-wrapper(style=`--width: ${it.width}px`)
+                +picture(it.path, it.name, it.format, it.width, it.height, it.altText)

@@ -1,0 +1,28 @@
+extends ../base/layout
+
+block variables
+  - const title = "Account — Self Service Marketplace"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "header--shadow"
+  - const hasAuth = true
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = ""
+
+block main
+  main
+    .page-content
+      section.account
+        h1.visually-hidden!="Account"
+        .container
+          +breadcrumbs(breadcrumbsPath, "account").account__breadcrumbs
+          ul.account__list
+            each item in account
+              li.account__item
+                +icon(`icon-account-${item.svg}`, 74, 74).account__svg
+                .account__content
+                  p.account__title!=item.title
+                  +dotted.account__dotted
+                  +link(`#${item.link}`, "View details", "arrow").account__link
+block modals

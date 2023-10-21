@@ -1,0 +1,15 @@
+@mixin font-face($ff: "Rouble", $file-name: "rouble", $weight: (400)) {
+  @for $i from 1 through length($weight) {
+    @font-face {
+      font-style: normal;
+      font-weight: nth($weight, $i);
+      font-family: $ff;
+      font-display: swap;
+      src:
+        url("../fonts/#{$file-name}-#{nth($weight, $i)}.woff2") format("woff2"),
+        url("../fonts/#{$file-name}-#{nth($weight, $i)}.woff") format("woff");
+    }
+  }
+}
+
+@include font-face("Montserrat", "montserrat", (300, 400, 500, 600, 700, 800));

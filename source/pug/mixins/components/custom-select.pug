@@ -1,0 +1,21 @@
+mixin custom-select(data)
+  if (data.choice === "single")
+    .custom-select.custom-select--placeholder(data-select data-name=data.name data-required="true" data-insert="true")
+      span.custom-select__label!=data.label
+      span.custom-select__placeholder!=data.placeholder
+      button(class="custom-select__button" type="button" aria-label="Select options")
+        span.custom-select__text
+        span.custom-select__icon
+      ul.custom-select__list
+        each id, index in data.idList
+          li(class="custom-select__item" tabindex="0" data-select-value!=`${id}`)!=data.items[index]
+  else if (data.choice === "multiple")
+    .custom-select.custom-select--placeholder(data-select data-name=data.name data-required="true" data-insert="true" data-multiple="true")
+      span.custom-select__label!=data.label
+      span.custom-select__placeholder!=data.placeholder
+      button(class="custom-select__button" type="button" aria-label="Select options")
+        span.custom-select__text
+        span.custom-select__icon
+      ul.custom-select__list
+        each id, index in data.idList
+          li(class="custom-select__item" tabindex="0" data-select-value!=`${id}`)!=data.items[index]

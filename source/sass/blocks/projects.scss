@@ -1,0 +1,37 @@
+.projects {
+  & .services {
+    margin-bottom: 127px;
+
+    @include vp--1919 {
+      margin-bottom: 103px;
+    }
+
+    @include vp--1359 {
+      margin-bottom: 102px;
+    }
+
+    @include vp--719 {
+      margin-bottom: 108px;
+    }
+  }
+
+  &__breadcrumbs {
+    margin-bottom: 66px;
+
+    @include vp--1919 {
+      margin-bottom: 37px;
+    }
+
+    @include vp--719 {
+      margin-bottom: 49px;
+    }
+  }
+
+  & .dotted {
+    margin-bottom: 73px;
+
+    @include vp--1919 {
+      margin-bottom: 79px;
+    }
+  }
+}

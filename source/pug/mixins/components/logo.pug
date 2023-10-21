@@ -1,0 +1,5 @@
+mixin logo
+  - var isMain = currentPage === "main"
+  +btn-tag(isMain ? 'div' : 'a').logo(
+    href=!isMain && 'main.html', aria-label=!isMain && 'Переход на главную')&attributes(attributes)
+    +icon('logo', 111, 35)

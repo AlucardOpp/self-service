@@ -1,0 +1,13 @@
+mixin choices-select(data)
+  if (data.maxCount)
+    .custom-select
+      span.custom-select__label!=data.label
+      select(data-type="choices" data-max-count=data.maxCount name=data.name id=data.name multiple data-placeholder=data.placeholder)
+        - for (let i = 0; i < data.idList.length; i++)
+            option(value=data.idList[i])!=data.items[i]
+  else
+    .custom-select
+      span.custom-select__label!=data.label
+      select(data-type="choices" name=data.name id=data.name multiple data-placeholder=data.placeholder)
+        - for (let i = 0; i < data.idList.length; i++)
+            option(value=data.idList[i])!=data.items[i]

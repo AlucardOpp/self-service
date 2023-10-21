@@ -1,0 +1,29 @@
+mixin table(data)
+  .table(id="table")
+    .table__item.table__item--header
+      ul.table__columns
+        each item in data.buttons
+          if (item.arrow)
+            li.table__column
+              if (!(item.action === "status"))
+                button(class=`table__button table__button--${item.arrow}` data-sort=`table__${item.action}` type="button" aria-label=`Sort by increase ${item.text}`)!=item.text
+                  +icon("icon-table-arrow-up", 18, 14).table__arrow.table__arrow--up
+                  +icon("icon-table-arrow-down", 18, 14).table__arrow.table__arrow--down
+              else
+                button(class=`table__button table__button--${item.arrow}` data-sort=`${item.action}` type="button" aria-label=`Sort by increase ${item.text}`)!=item.text
+                  +icon("icon-table-arrow-up", 18, 14).table__arrow.table__arrow--up
+                  +icon("icon-table-arrow-down", 18, 14).table__arrow.table__arrow--down
+          else
+            li.table__column!=item.text
+    ul.table__list
+      each item in data.items
+        li.table__item
+          ul.table__columns
+            li.table__column!=item.type
+            li.table__column(class="table__start" data-date-start=`${item.startYear}${item.startMonth}${item.startDay}`)!=item.start
+            li.table__column(class="table__due" data-date-due=`${item.dueYear}${item.dueMonth}${item.dueDay}`)!=item.due
+            if (item.status)
+              li.table__column
+                +status(item)
+            else
+              li.table__status.table__column!=item.statusText

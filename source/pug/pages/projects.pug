@@ -1,0 +1,25 @@
+extends ../base/layout
+
+block variables
+  - const title = "Projects — Self Service Marketplace"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "header--shadow header--projects"
+  - const hasAuth = true
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = ""
+
+block main
+  main
+    .page-content
+      section.projects
+        h1.visually-hidden!="Projects"
+        +breadcrumbs(breadcrumbsPath, "projects", "container").projects__breadcrumbs
+        +services(cardServiceList.projects, "inner")
+        +dotted("container")
+        section.tasks
+          .container.container--no-padding
+            h2.title.title--inner!="My tasks"
+            +table(table.projects)
+block modals

@@ -1,0 +1,9 @@
+mixin footer(footerMods, currentPage)
+  footer.footer(class=footerMods)
+    .container
+      +logo().logo.logo--white.footer__logo
+      p.footer__copyright !{footer.copyright}
+      ul.footer__link-list
+        each link in footer.links
+          li.footer__link-item
+            a.link.link--white(href=link.href) !{link.text}

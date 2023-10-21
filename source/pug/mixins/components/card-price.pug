@@ -1,0 +1,7 @@
+mixin card-price(data)
+  - var {title, text} = data || {}
+  .card-price
+    .card-price__inner
+      h3.title.title--h4.title--center.card-price__title!= title
+      p.card-price__text!= text
+      +btn('Start').btn--small.btn--blue.btn--hover-c-columbia-blue.btn--shadow.card-price__start-btn

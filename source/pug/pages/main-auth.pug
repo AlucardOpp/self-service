@@ -1,0 +1,22 @@
+extends ../base/layout
+
+block variables
+  - const title = "Self Service Marketplace"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasAuth = true
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = "main"
+
+block main
+  main
+    +intro
+    +services(cardServiceList.main)
+    .container
+      +dotted
+    +about
+    +pricing
+
+block modals

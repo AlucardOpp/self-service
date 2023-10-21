@@ -1,0 +1,112 @@
+.login {
+  padding-top: 200px;
+  padding-bottom: 81px;
+
+  @include vp--719 {
+    padding-top: 129px;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 87px;
+    margin-bottom: 56px;
+    // text-align: center;
+
+    @include vp--1919 {
+      margin-bottom: 64px;
+    }
+
+    @include vp--719 {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__control {
+    cursor: pointer;
+    min-width: auto;
+    padding-bottom: 19px;
+    margin-right: 50px;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 126%;
+    color: $color-dodger-blue;
+    border: none;
+    border-bottom: 1px dashed $color-dodger-blue;
+    background-color: transparent;
+    outline: none;
+    text-transform: lowercase;
+
+    @include vp--1919 {
+      font-size: 30px;
+    }
+
+    @include vp--719 {
+      padding-bottom: 15px;
+      margin-right: 29px;
+      font-size: 20px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.is-active {
+      pointer-events: none;
+      position: relative;
+      padding-bottom: 23px;
+      font-size: 50px;
+      color: $color-eclipse;
+      border-bottom: none;
+      text-transform: uppercase;
+
+      @include vp--1919 {
+        font-size: 40px;
+      }
+
+      @include vp--719 {
+        padding-bottom: 20px;
+        font-size: 30px;
+      }
+
+      &::after {
+        position: absolute;
+        left: -10px;
+        bottom: 0;
+        width: 234px;
+        height: 13px;
+        background-image: url("../img/svg/bracket.svg");
+        background-repeat: no-repeat;
+        content: "";
+
+        @include vp--1919 {
+          background-size: 195px 12px;
+        }
+
+        @include vp--719 {
+          left: -3px;
+          background-size: 132px 12px;
+        }
+      }
+    }
+  }
+
+  &__element {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  &__steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    @include vp--719 {
+      margin-bottom: 27px;
+    }
+  }
+}

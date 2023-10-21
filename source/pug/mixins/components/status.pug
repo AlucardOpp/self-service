@@ -1,0 +1,9 @@
+mixin status(data)
+  if (data.status === "done")
+    span.status(class=`status--${data.status}` data-status=data.status)
+      +icon("icon-done", 20, 20).status__svg
+      | #{data.statusText}
+  else if (data.status === "progress")
+    span.status(class=`status--${data.status}` data-status=data.status)
+      +icon("icon-in-progress", 20, 20).status__svg
+      | #{data.statusText}

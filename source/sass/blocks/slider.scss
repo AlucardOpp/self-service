@@ -1,0 +1,27 @@
+.slider {
+  cursor: grab;
+
+  &--clients {
+    .slider {
+      &__item {
+        width: auto;
+      }
+
+      &__img-wrapper {
+        width: var(--width);
+
+        @include vp--1359 {
+          width: calc(var(--width) / 1.7);
+        }
+
+        @include vp--719 {
+          width: var(--width);
+        }
+      }
+    }
+
+    .swiper-wrapper {
+      align-items: center;
+    }
+  }
+}

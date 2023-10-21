@@ -1,0 +1,610 @@
+-
+  var emailTemplates = {
+    webinarTraffic: {
+      firstEmail: {
+        1: [
+          {
+            id: "email-templates-research",
+            label: "I'm doing market research for",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+          },
+          {
+            id: "email-templates-company-description",
+            name: "email-templates-company-description",
+            label: "",
+            placeholder: "Company description, e.g. “an Enterprise Performance Management solution for small and medium-sized companies”",
+            type: "textarea",
+            hidden: "hidden",
+          },
+        ],
+        2: [
+          {
+            id: "email-templates-radar",
+            label: "and you came across my radar on LinkedIn. I appreciate what {{Lead Company Name}} is up to and I wanted to reach out because",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+          },
+          {
+            id: "email-templates-webinar-description-first",
+            label: "is inviting similar companies to ",
+            name: "webinar-description",
+            placeholder: "Webinar description, e.g. “a free webinar presenting our predictive analytics tool”",
+            type: "textarea",
+          },
+        ],
+        3: [
+          {
+            id: "email-templates-collaboration",
+            label: "Are you the right person to benefit from",
+            placeholder: "Collaboration value, e.g. “upgrading the service delivery process”",
+            name: "collaboration-value",
+            type: "textarea",
+            bottomText: "or is there someone you could connect me with, if not?",
+          },
+        ],
+        4: [
+          {
+            id: "email-templates-registration-link-first",
+            label: "Feel free to register here",
+            placeholder: "Webinar registration link",
+            name: "webinar-registration-link",
+            type: "url",
+            bottomText: "if this is right up your alley share this link with your team",
+          },
+        ],
+        number: "First",
+      },
+      secondEmail: {
+        1: [
+          {
+            id: "email-templates-webinar-description-second",
+            name: "webinar-description",
+            label: "Just popping this up to the top of your inbox.  Are you the best person to invite to",
+            placeholder: "Webinar description, e.g. “a free webinar presenting our predictive",
+            type: "textarea",
+            bottomText: "or is there a colleague you can connect me with? ",
+          },
+        ],
+        2: [
+          {
+            id: "email-templates-webinar-company-name-first",
+            label: "To further elaborate on the potential synergy",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+          },
+          {
+            id: "email-templates-webinar-synergy-value",
+            label: "",
+            placeholder: "Synergy value, e.g. “simplifies planning and analytics to support increased collaboration.”",
+            name: "synergy-value",
+            type: "textarea",
+            hidden: "hidden",
+          },
+        ],
+        3: [
+          {
+            id: "email-templates-webinar-colaboration-value",
+            label: "You can visit",
+            placeholder: "Collaboration value, e.g. “upgrading the service delivery process”",
+            name: "collaboration-value",
+            type: "textarea",
+          },
+          {
+            id: "email-templates-webinar-service-value",
+            label: "to see how ",
+            placeholder: "Service added value, e.g. “each of these components come together to boost your performance, streamline business collaboration, and help you make insight-based decisions with confidence”",
+            name: "service-added-value",
+            type: "textarea",
+          },
+        ],
+        4: [
+          {
+            id: "email-templates-webinar-registration-link-second",
+            label: "if this is right up your alley share this link with your team",
+            placeholder: "Webinar registration link",
+            name: "webinar-registration-link",
+            type: "url",
+          },
+        ],
+        number: "Second",
+      },
+      thirdEmail: {
+        1: [
+          {
+            id: "email-templates-webinar-length",
+            name: "email-templates-webinar-length",
+            label: "I want to be respectful of your time, so this is my last email. Do you have",
+            placeholder: "Webinar length, e.g. “30 minutes”",
+            type: "text",
+          },
+          {
+            id: "email-templates-target",
+            name: "email-templates-target",
+            label: "to learn how other companies in the",
+            placeholder: "Target industry, e.g. “Telecom”",
+            type: "text",
+          },
+          {
+            id: "email-templates-company-name-second",
+            label: "industry have transformed their business by collaborating with",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+          },
+        ],
+        2: [
+          {
+            id: "email-templates-webinar-registration-link-third",
+            label: "If this is of interest, feel free to register for this free online event by using this link",
+            placeholder: "Webinar registration link",
+            name: "webinar-registration-link",
+            type: "url",
+          },
+        ],
+        number: "Third",
+      },
+    },
+    webinarCheckout: {
+      firstEmail: [
+        {
+          number: "First",
+        },
+        {
+          text: "Sample name",
+        },
+        {
+          text: "Enterprise Performance Management solution for small and medium-sized companies"
+        },
+        {
+          text: "Sample name"
+        },
+        {
+          text: "a free webinar presenting our predictive analytics tool",
+        },
+        {
+          text: "upgrading the service delivery process",
+        },
+        {
+          link: "https://webinar.sample.com/id000000/login",
+          text: "Sample webinar registration link",
+        }
+      ],
+      secondEmail: [
+        {
+          number: "Second",
+        },
+        {
+          text: "a free webinar presenting our presenting our//",
+        },
+        {
+          text: "Sample name",
+        },
+        {
+          text: "simplifies planning and analytics to support increased collaboration",
+        },
+        {
+          link: "https://martal.ca/case-studies/clickworker/",
+          text: "https://martal.ca/case-studies/clickworker/",
+        },
+        {
+          text: "each of these components come together to boost your performance, streamline business collaboration, and help you make insight-based decisions with confidence",
+        },
+        {
+          link: "https://webinar.sample.com/id000000/login",
+          text: "Sample webinar link",
+        },
+      ],
+      thirdEmail: [
+        {
+          number: "Third",
+        },
+        {
+          text: "30 minutes",
+        },
+        {
+          text: "Telecom",
+        },
+        {
+          text: "Sample name",
+        },
+        {
+          link: "https://webinar.sample.com/id000000/login",
+          text: "Sample webinar registration link",
+        },
+      ],
+    },
+    emailCampaign: {
+      firstEmail: {
+        1: [
+          {
+            id: "email-templates-research",
+            label: "I'm doing market research for",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+          },
+          {
+            id: "email-templates-company-description",
+            name: "email-templates-company-description",
+            label: "",
+            placeholder: "Company description, e.g. “an Enterprise Performance Management solution for small and medium-sized companies”",
+            type: "textarea",
+            hidden: "hidden",
+          },
+        ],
+        2: [
+          {
+            id: "email-templates-radar",
+            label: "and you came across my radar on LinkedIn. I appreciate what {{Lead Company Name}} is up to and I wanted to reach out because",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+          },
+          {
+            id: "email-templates-service-value-first",
+            label: "is partnering with similar companies to",
+            placeholder: "Service added value, e.g. “help optimize and accelerate workflow using predictive analytics and automation”",
+            name: "service-added-value",
+            type: "textarea",
+          },
+        ],
+        3: [
+          {
+            id: "email-templates-collaboration-first",
+            label: "Are you the right person to discuss",
+            placeholder: "Collaboration value, e.g. “upgrading the service delivery process”",
+            name: "collaboration-value",
+            type: "textarea",
+            bottomText: "or is there someone you could connect me with, if not?",
+          },
+        ],
+        4: [
+          {
+            id: "email-templates-discovery-call",
+            label: "Let me know if this is right up your alley and I will coordinate a discovery call",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+            bottomText: "team.",
+          },
+        ],
+        number: "First",
+      },
+      secondEmail: {
+        1: [
+          {
+            id: "email-templates-collaboration-second",
+            label: "Just popping this up to the top of your inbox. Are you the best person to speak with regards to",
+            placeholder: "Collaboration value, e.g. “upgrading the service delivery process”",
+            name: "collaboration-value",
+            type: "textarea",
+            bottomText: "or is there a colleague you can connect me with? ",
+          },
+        ],
+        2: [
+          {
+            id: "email-templates-webinar-company-name-first",
+            label: "To further elaborate on the potential synergy",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+          },
+          {
+            id: "email-templates-service-value-second",
+            label: "",
+            placeholder: "Service added value, e.g. “each of these components come together to boost your performance, streamline business collaboration, and help you make insight-based decisions with confidence”",
+            name: "service-added-value",
+            type: "textarea",
+            hidden: "hidden",
+          },
+        ],
+        3: [
+          {
+            id: "email-templates-company-website",
+            name: "email-templates-company-website",
+            label: "You can visit",
+            placeholder: "Your company website, e.g. https://martal.ca/case-studies/clickworker/",
+            type: "textarea",
+          },
+          {
+            id: "email-templates-webinar-service-value",
+            label: "to see how ",
+            placeholder: "Service added value, e.g. “each of these components come together to boost your performance, streamline business collaboration, and help you make insight-based decisions with confidence”",
+            name: "service-added-value",
+            type: "textarea",
+            bottomText: "If this is of interest, let me help you book a discovery call to elaborate on the details. When would be a good time for you?",
+          },
+        ],
+        4: [
+          {
+            id: "email-templates-hubspot-link",
+            name: "email-templates-hubspot-link",
+            label: "Alternatively, you can book a call by using this link",
+            placeholder: "Your sales team calendly or hubspot link",
+            type: "url",
+          },
+        ],
+        number: "Second",
+      },
+      thirdEmail: {
+        1: [
+          {
+            id: "email-templates-target-industry",
+            name: "email-templates-target-industry",
+            label: "I want to be respectful of your time, so this is my last email. Do you have 15 minutes to learn how other companies in the",
+            placeholder: "Target industry, e.g. “Telecom”",
+            type: "text",
+          },
+          {
+            id: "email-templates-collaborating",
+            label: "industry have transformed their business by collaborating with",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+            bottomText: "? When would be a good time for a brief phone discussion with you?",
+          },
+        ],
+        number: "Third",
+      },
+    },
+    emailCampaignCheckout: {
+      firstEmail: [
+        {
+          number: "First",
+        },
+        {
+          text: "Sample company",
+        },
+        {
+          text: "Enterprise Performance Management solution for small and medium-sized companies"
+        },
+        {
+          text: "Sample company"
+        },
+        {
+          text: "help optimize and accelerate workflow using predictive analytics and automation",
+        },
+        {
+          text: "upgrading the service delivery process",
+        },
+        {
+          text: "Sample company",
+        }
+      ],
+      secondEmail: [
+        {
+          number: "Second",
+        },
+        {
+          text: "upgrading the service delivery process",
+        },
+        {
+          text: "Sample company",
+        },
+        {
+          text: "simplifies planning and analytics to support increased collaboration",
+        },
+        {
+          link: "https://martal.ca/case-studies/clickworker/",
+          text: "https://martal.ca/case-studies/clickworker/",
+        },
+        {
+          text: "each of these components come together to boost your performance, streamline business collaboration, and help you make insight-based decisions with confidence",
+        },
+        {
+          link: "https://webinar.sample.com/id000000/login",
+          text: "Sample calendly or hubspot link",
+        },
+      ],
+      thirdEmail: [
+        {
+          number: "Third",
+        },
+        {
+          text: "Telecom",
+        },
+        {
+          text: "Sample company",
+        },
+      ],
+    },
+    qualifyLeads: {
+      firstEmail: {
+        1: [
+          {
+            id: "email-templates-research",
+            label: "I'm doing market research for",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+          },
+          {
+            id: "email-templates-company-description",
+            name: "email-templates-company-description",
+            label: "",
+            placeholder: "Company description, e.g. “an Enterprise Performance Management solution for small and medium-sized companies”",
+            type: "textarea",
+            hidden: "hidden",
+          },
+        ],
+        2: [
+          {
+            id: "email-templates-radar",
+            label: "and you came across my radar on LinkedIn. I appreciate what {{Lead Company Name}} is up to and I wanted to reach out because",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+          },
+          {
+            id: "email-templates-service-value-first",
+            label: "is partnering with similar companies to",
+            placeholder: "Service added value, e.g. “help optimize and accelerate workflow using predictive analytics and automation”",
+            name: "service-added-value",
+            type: "textarea",
+          },
+        ],
+        3: [
+          {
+            id: "email-templates-collaboration-first",
+            label: "Are you the right person to discuss",
+            placeholder: "Collaboration value, e.g. “upgrading the service delivery process”",
+            name: "collaboration-value",
+            type: "textarea",
+            bottomText: "or is there someone you could connect me with, if not?",
+          },
+        ],
+        4: [
+          {
+            id: "email-templates-discovery-call",
+            label: "Let me know if this is right up your alley and I will coordinate a discovery call",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+            bottomText: "team.",
+          },
+        ],
+        number: "First",
+      },
+      secondEmail: {
+        1: [
+          {
+            id: "email-templates-collaboration-second",
+            label: "Just popping this up to the top of your inbox. Are you the best person to speak with regards to",
+            placeholder: "Collaboration value, e.g. “upgrading the service delivery process”",
+            name: "collaboration-value",
+            type: "textarea",
+            bottomText: "or is there a colleague you can connect me with? ",
+          },
+        ],
+        2: [
+          {
+            id: "email-templates-webinar-company-name-first",
+            label: "To further elaborate on the potential synergy",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+          },
+          {
+            id: "email-templates-service-value-second",
+            label: "",
+            placeholder: "Service added value, e.g. “each of these components come together to boost your performance, streamline business collaboration, and help you make insight-based decisions with confidence”",
+            name: "service-added-value",
+            type: "textarea",
+            hidden: "hidden",
+          },
+        ],
+        3: [
+          {
+            id: "email-templates-company-website",
+            name: "email-templates-company-website",
+            label: "You can visit",
+            placeholder: "Your company website, e.g. https://martal.ca/case-studies/clickworker/",
+            type: "textarea",
+          },
+          {
+            id: "email-templates-webinar-service-value",
+            label: "to see how ",
+            placeholder: "Service added value, e.g. “each of these components come together to boost your performance, streamline business collaboration, and help you make insight-based decisions with confidence”",
+            name: "service-added-value",
+            type: "textarea",
+            bottomText: "If this is of interest, let me help you book a discovery call to elaborate on the details. When would be a good time for you?",
+          },
+        ],
+        4: [
+          {
+            id: "email-templates-hubspot-link",
+            name: "email-templates-hubspot-link",
+            label: "Alternatively, you can book a call by using this link",
+            placeholder: "Your sales team calendly or hubspot link",
+            type: "url",
+          },
+        ],
+        number: "Second",
+      },
+      thirdEmail: {
+        1: [
+          {
+            id: "email-templates-target-industry",
+            name: "email-templates-target-industry",
+            label: "I want to be respectful of your time, so this is my last email. Do you have 15 minutes to learn how other companies in the",
+            placeholder: "Target industry, e.g. “Telecom”",
+            type: "text",
+          },
+          {
+            id: "email-templates-collaborating",
+            label: "industry have transformed their business by collaborating with",
+            placeholder: "Your company name",
+            name: "company",
+            type: "text",
+            bottomText: "? When would be a good time for a brief phone discussion with you?",
+          },
+        ],
+        number: "Third",
+      },
+    },
+    qualifyLeadsCheckout: {
+      firstEmail: [
+        {
+          number: "First",
+        },
+        {
+          text: "Sample company",
+        },
+        {
+          text: "Enterprise Performance Management solution for small and medium-sized companies"
+        },
+        {
+          text: "Sample company"
+        },
+        {
+          text: "help optimize and accelerate workflow using predictive analytics and automation",
+        },
+        {
+          text: "upgrading the service delivery process",
+        },
+        {
+          text: "Sample company",
+        }
+      ],
+      secondEmail: [
+        {
+          number: "Second",
+        },
+        {
+          text: "upgrading the service delivery process",
+        },
+        {
+          text: "Sample company",
+        },
+        {
+          text: "simplifies planning and analytics to support increased collaboration",
+        },
+        {
+          link: "https://martal.ca/case-studies/clickworker/",
+          text: "https://martal.ca/case-studies/clickworker/",
+        },
+        {
+          text: "each of these components come together to boost your performance, streamline business collaboration, and help you make insight-based decisions with confidence",
+        },
+        {
+          link: "https://webinar.sample.com/id000000/login",
+          text: "Sample calendly or hubspot link",
+        },
+      ],
+      thirdEmail: [
+        {
+          number: "Third",
+        },
+        {
+          text: "Telecom",
+        },
+        {
+          text: "Sample company",
+        },
+      ],
+    },
+  }

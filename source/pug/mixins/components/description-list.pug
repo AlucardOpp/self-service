@@ -1,0 +1,30 @@
+mixin description-list(data, type)
+  if (type === "linkedinFollowers")
+    section.description-list(class=attributes.class)
+      .container
+        .page-content__container
+          h2.visually-hidden!=data.title
+          dl.description-list__checkout.description-list__checkout--linkedin-followers
+            each item in data.list
+              dt.description-list__checkout-title!=item.title
+              if (item.link === "link")
+                dd.description-list__checkout-content.description-list__checkout-content--linkedin-followers
+                  a.link.link--inner(href=item.href)!=item.content
+              else if (item.screenshot === "screenshot")
+                dd.description-list__checkout-content.description-list__checkout-content--linkedin-followers
+                  +upload-file(item, item.screenshot)
+              else
+                dd.description-list__checkout-content.description-list__checkout-content--linkedin-followers!=item.content
+  else
+    section.description-list(class=attributes.class)
+      .container
+        .page-content__container
+          h2.title.title--inner!=data.title
+          dl.description-list__checkout
+            each item in data.list
+              dt.description-list__checkout-title!=item.title
+              if (item.link === "link")
+                dd.description-list__checkout-content
+                  a.link(href=item.content aria-label="Go to the webinar link")!=item.content
+              else
+                dd.description-list__checkout-content!=item.content

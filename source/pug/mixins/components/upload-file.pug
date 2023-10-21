@@ -1,0 +1,13 @@
+mixin upload-file(data, screenshot)
+  if (screenshot === "screenshot")
+    .upload-file(class=attributes.class)
+        span.upload-file__upload-result.upload-file__upload-result--hidden!=data.content
+  else
+    .upload-file(class=attributes.class)
+      .container
+        p.upload-file__text!=data.text
+        .upload-file__upload-container
+          input(type="file" class="visually-hidden upload-file__input" name=data.name id=data.name required)
+          label.upload-file__upload-label(for=data.name)
+            +btn("Upload file", {name: 'icon-upload-arrow-up', width: 24, height: 24}, "span").upload-file__button.btn--medium-upload.btn--blue.btn--hover-bc-summer-sky
+          button(type="button").upload-file__upload-result!="No files selected"

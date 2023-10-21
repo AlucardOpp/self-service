@@ -1,0 +1,30 @@
+.icp-info {
+  margin: 0 0 75px 0;
+  padding: 0;
+  border: none;
+
+  & fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & .title {
+    margin-bottom: 22px;
+    display: block;
+  }
+
+  @include vp--1919 {
+    margin-bottom: 64px;
+
+    & .title {
+      margin-bottom: 27px;
+    }
+  }
+
+  @include vp--719 {
+    & .title {
+      margin-bottom: 67px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+extends ../base/layout
+
+block variables
+  - const title = "Qualify Leads Checkout — Self Service Marketplace"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "header--shadow"
+  - const hasAuth = true
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = ""
+
+block main
+  main
+    .page-content
+      section.service
+        h1.visually-hidden!="Qualify Leads Checkout"
+        .page-content__intro.page-content__intro--checkout
+          .container
+            .page-content__container
+              .page-content__breadcrumbs
+                +breadcrumbs(breadcrumbsPath, "qualifyLeadsCheckout")
+              p.page-content__description.page-content__description--checkout!="Please review and confirm all details are correct"
+              .page-content__buttons.page-content__buttons--checkout
+                +btn("Guidance & Q+A", {name: 'icon-guidance', width: 24, height: 24}, "a").page-content__guidance.btn--medium.btn--blue.btn--hover-bc-summer-sky(href="#")
+                +link("#", "See how it works", "icon").page-content__link
+              +steps(stepsPath, "checkout").steps--mobile-hidden
+        +email-templates(emailTemplates.qualifyLeadsCheckout, "checkout")
+        +description-list(icpInfo.qualifyLeadsCheckout).description-list--icp-info
+        +back-and-payment
+block modals

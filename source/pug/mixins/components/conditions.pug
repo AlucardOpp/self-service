@@ -1,0 +1,7 @@
+mixin conditions(id)
+  .conditions
+    input.visually-hidden(type="checkbox", name="conditions", id=id checked, required)
+    label(for=id)
+      +icon("uncheck", 20, 20).conditions__icon.conditions__icon-uncheck
+      +icon("check", 12, 10).conditions__icon.conditions__icon-check
+      | Agree to the <a class="conditions__link link" href="#">Terms and Conditions</a>

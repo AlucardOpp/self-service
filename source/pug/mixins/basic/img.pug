@@ -1,0 +1,4 @@
+mixin img(path, image, format, width, height, altText, isLazy)
+  img(src=`img/${path}/${image}.${format}`,
+    srcset= format !== 'svg' && `img/${path}/${image}.${format} 2x`,
+    width= width, height= height, alt= altText, loading=isLazy ? "lazy" : false)&attributes(attributes)

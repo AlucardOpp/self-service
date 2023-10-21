@@ -1,0 +1,80 @@
+extends ../base/layout
+
+block variables
+  - var title = "Список страниц"
+
+block main
+  style
+    include ../page-css/index.css
+
+  -
+    var pages = [
+      {
+        name: "UI-kit — ui-kit.html",
+        src: "ui-kit.html"
+      },
+      {
+        name: "Главная — main.html",
+        src: "main.html"
+      },
+      {
+        name: "Главная (залогиненное состояние) — main-auth.html",
+        src: "main-auth.html"
+      },
+      {
+        name: "Login — login.html",
+        src: "login.html"
+      },
+      {
+        name: "Projects — projects.html",
+        src: "projects.html"
+      },
+      {
+        name: "Account — account.html",
+        src: "account.html"
+      },
+      {
+        name: "Webinar traffic — webinar-traffic.html",
+        src: "webinar-traffic.html"
+      },
+      {
+        name: "Webinar checkout — webinar-checkout.html",
+        src: "webinar-checkout.html"
+      },
+      {
+        name: "Email Campaign — email-campaign.html",
+        src: "email-campaign.html"
+      },
+      {
+        name: "Email Campaign Checkout — email-campaign-checkout.html",
+        src: "email-campaign-checkout.html"
+      },
+      {
+        name: "Qualify Leads — qualify-leads.html",
+        src: "qualify-leads.html"
+      },
+      {
+        name: "Qualify Leads Checkout — qualify-leads-checkout.html",
+        src: "qualify-leads-checkout.html"
+      },
+      {
+        name: "Linkedin Followers — linkedin-followers.html",
+        src: "linkedin-followers.html"
+      },
+      {
+        name: "Linkedin Followers Checkout — linkedin-followers-checkout.html",
+        src: "linkedin-followers-checkout.html"
+      },
+      {
+        name: "Thanks — thanks.html",
+        src: "thanks.html"
+      },
+    ]
+
+  main.container.main-index
+    +icon('logo', 117, 57)(style='color: #383838')
+    h1 Список страниц
+    ol
+      each page in pages
+        li
+          a(href= page.src)= page.name

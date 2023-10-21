@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  max-width: ($vp--1920 - 2 * $padding--desk);
+  margin: 0 auto;
+
+  @include vp--1919 {
+    max-width: ($vp--1920 - $padding--desk * 2);
+    padding-right: $padding--1919;
+    padding-left: $padding--1919;
+  }
+
+  @include vp--1359 {
+    max-width: ($vp--1360 - $padding--1919 * 2);
+    padding-right: $padding--1359;
+    padding-left: $padding--1359;
+  }
+
+  @include vp--719 {
+    &--inner {
+      padding-left: $padding--719;
+      padding-right: $padding--719;
+    }
+  }
+
+  &--no-padding {
+    @include vp--719 {
+      padding: 0;
+    }
+  }
+}

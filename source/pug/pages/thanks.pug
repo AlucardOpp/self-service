@@ -1,0 +1,20 @@
+extends ../base/layout
+
+block variables
+  - const title = "Thanks — Self Service Marketplace"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "header--shadow"
+  - const hasAuth = true
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = ""
+
+block main
+  main
+    section.thanks
+      .container.container--inner.thanks__container
+        h1.thanks__title.title!="thank you <br> for your purchase!"
+        p.thanks__text!="Results will be sent to your email <br> Within 10 business days."
+        +btn("Home", {name: 'icon-home', width: 24, height: 24}, "a").btn--medium-thanks.btn--blue.btn--hover-bc-summer-sky(href="./main.html")
+block modals

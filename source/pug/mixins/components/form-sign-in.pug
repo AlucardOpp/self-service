@@ -1,0 +1,13 @@
+mixin form-sign-in()
+  .form-sign-in(class!=attributes.class)
+    form(action=action, method=method)
+      .input-group
+        .input-box
+          label.visually-hidden Email
+          input(type="email", name="email", placeholder="Email adress", required)
+        .input-box
+          label.visually-hidden Password
+          input(type="password", name="password", placeholder="* * * * * * * * * * * *", required)
+      +conditions("signup")
+      +btn("sign in", {name: "sign-in", width: 20, height: 20}, "button").form-sign-in__submit.btn.btn--medium.btn--blue.btn--hover-bc-summer-sky-c-white(type="submit")
+      a.form-sign-in__forgot-password.link(href="#") Forgot password?

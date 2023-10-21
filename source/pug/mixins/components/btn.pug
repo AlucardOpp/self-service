@@ -1,0 +1,13 @@
+mixin btn(text, icon, tag, data)
+  - var {isHiddenText} = data || {}
+  +btn-tag(tag).btn&attributes(attributes)
+
+    if icon
+      - var {name, width = 34, height = 34} = icon || {};
+      +icon(name, width, height).btn__icon-wrap
+
+    if text
+      if isHiddenText
+        span(class='visually-hidden')!= text
+      else
+        span!= text

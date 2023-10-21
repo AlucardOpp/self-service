@@ -1,0 +1,22 @@
+mixin service-info(data, type)
+  if (type === "select")
+    fieldset.service-info.service-info--select
+      .container
+        fieldset.page-content__container
+          legend.title.title--inner!=data.title
+          each item in data.selects
+            +custom-select(item)
+  else if (type === "hidden")
+    fieldset.service-info.service-info--hidden
+      .container
+        fieldset.page-content__container
+          legend.title.title--inner!=data.title
+          each item in data.inputs
+            +form-input(item.type, item.name, item.id, item.label, item.placeholder, item.hidden)
+  else
+    .service-info
+      .container
+        fieldset.page-content__container
+          legend.title.title--inner!=data.title
+          each item in data.inputs
+            +form-input(item.type, item.name, item.id, item.label, item.placeholder, item.hidden)

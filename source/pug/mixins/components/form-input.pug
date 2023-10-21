@@ -1,0 +1,39 @@
+mixin form-input(type, name, id, label, placeholder, hidden)
+  if (hidden === "hidden")
+    if (type === "text")
+      .form-input(class!=attributes.class)
+          label(class="visually-hidden" for!=id)
+          input(type="text" name!=name placeholder!=placeholder id!=id required)
+    else if (type === "url")
+      .form-input(class!=attributes.class)
+          label(class="visually-hidden" for!=id)
+          input(type="url" name!=name placeholder!=placeholder id!=id required)
+    else if (type === "number")
+      .form-input(class!=attributes.class)
+          label(class="visually-hidden" for!=id)
+          input(type="number" name!=name placeholder!=placeholder id!=id required)
+    else if (type === "textarea")
+        .form-input(class!=attributes.class)
+          label(class="visually-hidden" for!=id)
+          .form-input__textarea
+            span
+            textarea(name!=name id!=id placeholder!=placeholder rows="1" required)
+  else
+    if (type === "text")
+      .form-input(class!=attributes.class)
+          label(for!=id)!=label
+          input(type="text" name!=name placeholder!=placeholder id!=id required)
+    else if (type === "url")
+      .form-input(class!=attributes.class)
+          label(for!=id)!=label
+          input(type="url" name!=name placeholder!=placeholder id!=id required)
+    else if (type === "number")
+      .form-input(class!=attributes.class)
+          label(for!=id)!=label
+          input(type="number" name!=name placeholder!=placeholder id!=id required)
+    else if (type === "textarea")
+        .form-input(class!=attributes.class)
+          label(for!=id)!=label
+          .form-input__textarea
+            span
+            textarea(name!=name id!=id placeholder!=placeholder rows="1" required)

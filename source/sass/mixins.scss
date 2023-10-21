@@ -1,0 +1,87 @@
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin vp--1919 {
+  @media (max-width: $vp--1920 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--1439 {
+  @media (max-width: $vp--1440 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--1359 {
+  @media (max-width: $vp--1360 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--1199 {
+  @media (max-width: $vp--1200 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--1023 {
+  @media (max-width: $vp--1024 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--767 {
+  @media (max-width: $vp--768 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--719 {
+  @media (max-width: $vp--720 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--374 {
+  @media (max-width: $vp--375 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--720 {
+  @media (min-width: $vp--720) {
+    @content;
+  }
+}
+
+@mixin hover-focus {
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(.focus-visible),
+    &.focus-visible:focus {
+      @content;
+    }
+  }
+}
+
+@mixin line-clamp($count) {
+  display: -webkit-box; // stylelint-disable-line value-no-vendor-prefix
+  -webkit-box-orient: vertical; // stylelint-disable-line property-no-vendor-prefix
+  -webkit-line-clamp: $count;
+  overflow: hidden;
+}
+
+@mixin flex-gap($v-gap: 0, $h-gap: 0, $class-list-suffix: "list", $class-item-suffix: "item") {
+  &__#{$class-list-suffix} {
+    margin-top: -#{$v-gap};
+    margin-left: -#{$h-gap};
+  }
+
+  &__#{$class-item-suffix} {
+    margin-top: $v-gap;
+    margin-left: $h-gap;
+  }
+}

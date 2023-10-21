@@ -1,0 +1,258 @@
+.intro {
+  position: relative;
+  padding-top: calc(var(--header-height) + 231px);
+  padding-bottom: 183px;
+  font-family: inherit;
+  font-size: 18px;
+  color: $color-eclipse;
+
+  @include vp--1919 {
+    padding-top: calc(var(--header-height) + 41px);
+    padding-bottom: 151px;
+  }
+
+  @include vp--1359 {
+    padding-top: calc(var(--header-height) + 22px);
+  }
+
+  @include vp--719 {
+    padding-bottom: 116px;
+    font-size: 16px;
+    background-image: none;
+  }
+
+  .container {
+    @include vp--719 {
+      padding-right: 14px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    @include vp--719 {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 55.5% calc(100% - 55.5% - 46px);
+    column-gap: 46px;
+    margin-bottom: 56px;
+
+    @include vp--1919 {
+      grid-template-columns: 55% calc(100% - 55% - 49px);
+      column-gap: 49px;
+      margin-bottom: 41px;
+    }
+
+    @include vp--1359 {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
+
+    @include vp--719 {
+      margin-bottom: 68px;
+    }
+  }
+
+  &__column {
+    @include vp--1359 {
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include vp--1023 {
+      min-width: 100%;
+    }
+
+    @include vp--719 {
+      margin-bottom: 37px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 28px;
+
+    @include vp--1919 {
+      margin-bottom: 19px;
+    }
+
+    @include vp--1359 {
+      width: 100%;
+      margin-bottom: 26px;
+    }
+
+    @include vp--719 {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__text {
+    max-width: 660px;
+    margin: 0;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.04em;
+
+    @include vp--1919 {
+      max-width: 580px;
+    }
+
+    p {
+      margin: 0 0 10px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__link {
+    margin-bottom: 50px;
+
+    @include vp--1919 {
+      margin-bottom: 49px;
+    }
+
+    @include vp--1359 {
+      margin-bottom: 21px;
+    }
+
+    @include vp--719 {
+      margin-bottom: 11px;
+    }
+  }
+
+  &__advantages-list {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, minmax(118px, 193px));
+    gap: 17px;
+    padding: 50px 0 0;
+    margin: 0;
+    list-style: none;
+
+    @include vp--1919 {
+      grid-template-columns: repeat(3, minmax(92px, 150px));
+      gap: 16px;
+      padding-top: 18px;
+    }
+
+    @include vp--1359 {
+      width: 500px;
+      padding: 0;
+    }
+
+    @include vp--719 {
+      display: flex;
+      grid-template-columns: none;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      gap: 27px;
+    }
+  }
+
+  &__advantages-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 620px;
+
+    @include vp--719 {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+
+  &__advantages-item-svg {
+    display: block;
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 22px;
+
+    @include vp--719 {
+      margin-right: 14px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__advantage-text {
+    font-size: 18px;
+
+    @include vp--1919 {
+      font-size: 14px;
+      line-height: 23px;
+    }
+
+    strong {
+      display: block;
+      font-weight: 800;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 95px;
+    padding-bottom: 49px;
+    border-bottom: 2px dotted $color-grey;
+
+    @include vp--1919 {
+      padding-bottom: 54px;
+    }
+
+    @include vp--1359 {
+      margin-bottom: 40px;
+      padding-bottom: 2px;
+    }
+
+    @include vp--719 {
+      margin-bottom: 79px;
+      padding-bottom: 21px;
+    }
+  }
+
+  &__description {
+    max-width: 1150px;
+    width: 100%;
+  }
+
+  &__description-title {
+    margin: 0 0 15px;
+
+    @include vp--719 {
+      margin-bottom: 24px;
+      line-height: 46px;
+    }
+  }
+
+  &__description-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 31px;
+  }
+
+  &__description-text p {
+    margin: 0 0 10px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

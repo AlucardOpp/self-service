@@ -1,0 +1,145 @@
+.email-templates {
+  padding: 66px 0 82px 0;
+  background-color: $color-snow;
+  margin: 0 0 71px 0;
+  border: none;
+
+  & fieldset:first-child {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & .title {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  @include vp--1919 {
+    padding: 61px 0 80px 0;
+    margin-bottom: 61px;
+
+    & .title {
+      margin-bottom: 33px;
+    }
+  }
+
+  @include vp--1359 {
+    padding: 70px 0 59px 0;
+    margin-bottom: 74px;
+  }
+
+  @include vp--719 {
+    padding: 61px 0 69px 0;
+    margin-bottom: 86px;
+
+    & .title {
+      margin-bottom: 34px;
+    }
+  }
+}
+
+.email-templates--checkout {
+  padding: 66px 0 101px 0;
+  margin-bottom: 66px;
+
+  @include vp--1919 {
+    margin-bottom: 70px;
+    padding: 66px 0 68px 0;
+  }
+
+  @include vp--1359 {
+    padding: 61px 0 62px 0;
+    margin-bottom: 70px;
+  }
+}
+
+.email-templates__description {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: $color-eclipse;
+  margin: 0 0 51px 0;
+
+  @include vp--1919 {
+    margin-bottom: 40px;
+  }
+
+  @include vp--719 {
+    margin-bottom: 33px;
+  }
+}
+
+.email-templates__text {
+  margin: 21px 0 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: $color-eclipse;
+
+  @include vp--1919 {
+    margin-top: 11px;
+  }
+}
+
+.email-templates__hello {
+  margin: 0 0 51px 0;
+
+  @include vp--1919 {
+    margin: 0 0 24px 0;
+  }
+}
+
+.email-templates__field {
+  margin-bottom: 79px;
+
+  & label {
+    margin-bottom: 21px;
+  }
+
+  @include vp--1919 {
+    margin-bottom: 41px;
+  }
+
+  @include vp--719 {
+    margin-bottom: 42px;
+  }
+}
+
+.email-templates__number {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  color: $color-eclipse;
+  margin: 0 0 45px 0;
+  display: block;
+
+  @include vp--1919 {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 34px;
+  }
+}
+
+.email-templates__email {
+  margin: 0 0 89px 0;
+  padding: 0;
+  border: none;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include vp--1919 {
+    margin-bottom: 93px;
+  }
+
+  @include vp--1359 {
+    margin-bottom: 61px;
+  }
+
+  @include vp--719 {
+    margin-bottom: 83px;
+  }
+}

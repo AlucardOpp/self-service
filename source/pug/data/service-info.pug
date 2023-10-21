@@ -1,0 +1,124 @@
+-
+  const serviceInfo = {
+    webinarTraffic: {
+      title: "Webinar info",
+      inputs: [
+        {
+          id: "webinar-link",
+          name: "webinar-link",
+          label: "Webinar link",
+          placeholder: "Link",
+          type: "url",
+        },
+        {
+          id: "webinar-targeting",
+          name: "webinar-targeting",
+          label: "Who is the Webinar targeting?",
+          placeholder: "Please describe target audience",
+          type: "textarea",
+        },
+        {
+          id: "webinar-reason",
+          name: "webinar-reason",
+          label: "For what reason are the individuals attending the webinar?",
+          placeholder: "Problem description",
+          type: "textarea",
+        },
+        {
+          id: "webinar-expectations",
+          name: "webinar-expectations",
+          label: "What is the expected outcome of the webinar?",
+          placeholder: "Outcome description",
+          type: "textarea",
+        },
+      ],
+    },
+    webinarCheckout: {
+      title: "Webinar info",
+      list: [
+        {
+          title: "Webinar link",
+          content: "https://webinar.sample.com/id000000/login",
+          link: "link",
+        },
+        {
+          title: "Who is that webinar for?",
+          content: "Sample text",
+        },
+        {
+          title: "Why are the people attending (the problem)",
+          content: "Problem description",
+        },
+        {
+          title: "What's the value (the outcome)",
+          content: "Outcome description",
+        },
+      ],
+    },
+    emailCampaign: {
+      title: "Email Campaign info",
+      inputs: [
+        {
+          id: "appointment-link",
+          name: "appointment-link",
+          label: "“Book an appointment” link",
+          placeholder: "Link",
+          type: "url",
+        },
+      ],
+    },
+    emailCampaignCheckout: {
+      title: "Webinar info",
+      list: [
+        {
+          title: "“Book an appointment” link",
+          content: "https://calendly.com/sample",
+          link: "link",
+        },
+      ],
+    },
+    linkedinFollowers: {
+      0: {
+        title: "Your Linkedin Profile",
+        inputs: [
+          {
+            id: "linkedin-link",
+            name: "linkedin-link",
+            label: "Please enter the link to your LinkedIN Profile",
+            placeholder: "Link",
+            type: "url",
+          },
+        ],
+      },
+      1: {
+        title: "Select the Amount of Followers",
+        type: "select",
+        selects: [
+          {
+            label: "Select the amount of followers",
+            placeholder: "Amount of followers",
+            items: ["100", "250", "500"],
+            idList: ["amount-followers-100", "amount-followers-250", "amount-followrs-500"],
+            choice: "single",
+            name: "amount-followers",
+            id: "amount-followers",
+            select: "custom",
+          },
+        ],
+      },
+      2: {
+        title: "Current Number of LinkedIn Followers",
+        type: "hidden",
+        inputs: [
+          {
+            id: "linkedin-followers",
+            name: "linkedin-followers",
+            label: "",
+            placeholder: "Insert number",
+            type: "number",
+            hidden: "hidden",
+          },
+        ],
+      },
+    },
+  }

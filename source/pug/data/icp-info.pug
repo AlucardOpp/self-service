@@ -1,0 +1,301 @@
+-
+  var icpInfo = {
+    webinarTraffic: [
+      {
+        label: "Choose target countries",
+        placeholder: "Choose target countries",
+        items: ["USA", "Mexico", "USA and Mexico"],
+        idList: ["usa", "mexico", "usa-and-mexico"],
+        choice: "single",
+        name: "target-countries",
+        select: "custom",
+      },
+      {
+        label: "Choose target industries",
+        placeholder: "Choose target industries",
+        items: ["Information Technology and Services", "Hospital & Health Care", "Construction", "Retail", "Education Management", "Financial Services", "Accounting", "Computer Software", "Higher Education", "Automotive", "Government Administration", "Marketing and Advertising", "Banking", "Health, Wellness and Fitness", "Real Estate", "Food & Beverages", "Telecommunications", "Hospitality", "Mechanical or Industrial Engineering", "Primary/Secondary Education", "Internet", "Electrical/Electronic Manufacturing", "Insurance", "Medical Practice", "Human Resources", "Consumer Services", "Transportation/Trucking/Railroad", "Pharmaceuticals", "Restaurants", "Management Consulting", "Civil Engineering", "Research", "Design", "Logistics and Supply Chain", "Law Practice", "Architecture & Planning", "Apparel & Fashion", "Consumer Goods", "Facilities Services", "Food Production", "Non-Profit Organization Management", "Machinery", "Entertainment", "Chemicals", "Wholesale", "Arts and Crafts", "Utilities", "Farming", "Legal Services", "Mining & Metals", "Airlines/Aviation", "Leisure, Travel & Tourism", "Sports", "Building Materials", "Environmental Services", "Professional Training & Coaching", "Medical Devices", "Music", "Individual & Family Services", "Cosmetics", "Mental Health Care", "Industrial Automation", "Security and Investigations", "Staffing and Recruiting", "Aviation & Aerospace", "Graphic Design", "Biotechnology", "Textiles", "Import and Export", "Consumer Electronics", "Public Relations and Communications", "Broadcast Media", "Business Supplies and Equipment", "Writing and Editing", "Military", "Media Production", "Computer Networking", "International Trade and Development", "Renewables & Environment", "Events Services", "Civic & Social Organization", "Photography", "Computer Hardware", "Defense & Space", "Furniture", "Computer & Network Security", "Printing", "Fine Art", "Investment Management", "E-Learning", "Outsourcing/Offshoring", "Warehousing", "Law Enforcement", "Publishing", "Religious Institutions", "Maritime", "Information Services", "Supermarkets", "Executive Office", "Animation", "Government Relations", "Semiconductors", "Program Development", "Plastics", "Online Media", "Public Safety", "Packaging and Containers", "Judiciary", "Alternative Medicine", "Performing Arts", "Commercial Real Estate", "Motion Pictures and Film", "Veterinary", "Computer Games", "Luxury Goods & Jewelry", "International Affairs", "Investment Banking", "Market Research", "Wine and Spirits", "Package/Freight Delivery", "Newspapers", "Translation and Localization", "Recreational Facilities and Services", "Sporting Goods", "Public Policy", "Capital Markets", "Paper & Forest Products", "Libraries", "Wireless", "Venture Capital & Private Equity", "Gambling & Casinos", "Ranching", "Glass, Ceramics & Concrete", "Philanthropy", "Dairy", "Museums and Institutions", "Shipbuilding", "Think Tanks", "Political Organization", "Fishery", "Fund-Raising", "Tobacco", "Railroad Manufacture", "Alternative Dispute Resolution", "Nanotechnology", "Legislative Office", "Mobile Games"],
+        idList: ["technology-and-services", "hospital", "construction", "retail", "education-management", "financial-services", "accounting", "computer-software", "higher-education", "automotive", "government-administration", "marketing-and-advertising", "banking", "health", "real-estate", "food-and-beverages", "telecommunications", "hospitality", "mechanical-or-Industrial", "primary-secondary-education", "internet", "electrical-electronic-manufacturing", "insurance", "medical-practice", "human-resources", "consumer-services", "transportation-trucking-railroad", "pharmaceuticals", "restaurants", "management-consulting", "civil-engineering", "research", "design", "logistics-and-supply", "law-practice", "architecture-and-planning", "apparel-and-fashion", "consumer-goods", "facilities-services", "food-production", "non-profit-organization-management", "machinery", "entertainment", "chemicals", "wholesale", "arts-and-crafts", "utilities", "farming", "legal-services", "mining-and-metals", "airlines-aviation", "leisure-travel-tourism", "sports", "building-materials", "environmental-services", "professional-training-and-coaching", "medical-devices", "music", "individual-and-family-services", "cosmetics", "mental-health-care", "industrial-automation", "security-and-investigations", "staffing-and-recruiting", "aviation-and-aerospace", "graphic-design", "biotechnology", "textiles", "import-and-export", "consumer-electronics", "public-relations-and-communications", "broadcast-media", "business-supplies-and-equipment", "writing-and-editing", "military", "media-production", "computer-networking", "international-trade-and-development", "renewables-and-environment", "events-services", "civic-and-social-organization", "photography", "computer-hardware", "defense-and-space", "furniture", "computer-and-network-security", "printing", "fine-art", "investment-management", "e-learning", "outsourcing-offshoring", "warehousing", "law-enforcement", "publishing", "religious-institutions", "maritime", "information-services", "supermarkets", "executive-office", "animation", "government-relations", "semiconductors", "program-development", "plastics", "online-media", "public-safety", "packaging-and-containers", "judiciary", "alternative-medicine", "performing-arts", "commercial-real-estate", "motion-pictures-and-film", "veterinary", "computer-games", "luxury-goods-and-jewelry", "international-affairs", "investment-banking", "market-research", "wine-and-spirits", "package-freight-delivery", "newspapers", "translation-and-localization", "recreational-facilities-and-services", "sporting-goods", "public-policy", "capital-markets", "paper-and-forest-products", "libraries", "wireless", "venture-capital-and-private-equity", "gambling-and-casinos", "ranching", "glass-ceramics-and-concrete", "philanthropy", "dairy", "museums-and-institutions", "shipbuilding", "think-tanks", "political-organization", "fishery", "fund-raising", "tobacco", "railroad-manufacture", "alternative-dispute-resolution", "nanotechnology", "legislative-office", "mobile-games"],
+        choice: "multiple",
+        name: "target-industries",
+        select: "choices",
+        maxCount: "3",
+      },
+      {
+        label: "Choose company size",
+        placeholder: "Choose company size",
+        items: ["Small and medium size business", "Mid market", "Enterprise"],
+        idList: ["small-and-medium", "mid", "enterprise"],
+        choice: "single",
+        name: "company-size",
+        select: "custom",
+      },
+      {
+        label: "Choose job level",
+        placeholder: "Choose job level",
+        items: ["C-level", "VP", "Head Director", "Manager"],
+        idList: ["c-level", "vp", "head-director", "manager"],
+        choice: "multiple",
+        name: "job-level",
+        select: "custom",
+      },
+      {
+        label: "Choose job function",
+        placeholder: "Choose job function",
+        items: ["Business", "Finance & Administration", "HR", "IT", "Legal", "Sales & Marketing", "Operations", "Procurement", "Support"],
+        idList: ["business", "finance-and-administration", "hr", "it", "legal", "sales-and-marketing", "operations", "procurement", "support"],
+        choice: "multiple",
+        name: "job-function",
+        select: "choices",
+      },
+      {
+        label: "Choose amount of prospects to target",
+        placeholder: "Choose amount of prospects to target",
+        items: ["3000", "4000", "5000", "1000", "1500", "2000", "300", "400"],
+        idList: ["3000-small-and-medium", "4000-small-and-medium", "5000-small-and-medium", "1000-mid", "1500-mid", "2000-mid", "300-enterprise", "400-enterprise"],
+        name: "amount-to-target",
+        choice: "single",
+        select: "custom",
+      },
+    ],
+    webinarCheckout: {
+      title: "ICP Info",
+      list: [
+        {
+            title: "Chosen target countries",
+            content: "USA and Mexico",
+        },
+        {
+            title: "Chosen target industries",
+            content: "Fintech",
+        },
+        {
+            title: "Chosen company size",
+            content: "Enterprise level",
+        },
+        {
+            title: "Job level",
+            content: "VP",
+        },
+        {
+            title: "Job function",
+            content: "HR, IT",
+        },
+        {
+            title: "Chosen amount of prospects to target",
+            content: "400",
+        },
+        {
+            title: "Price",
+            content: "400 USD",
+        },
+      ]
+    },
+    emailCampaign: [
+      {
+          label: "Choose target countries",
+          placeholder: "Choose target countries",
+          items: ["USA", "Mexico", "USA and Mexico"],
+          idList: ["usa", "mexico", "usa-and-mexico"],
+          choice: "single",
+          name: "target-countries",
+          select: "custom",
+        },
+        {
+          label: "Choose target industries",
+          placeholder: "Choose target industries",
+          items: ["Information Technology and Services", "Hospital & Health Care", "Construction", "Retail", "Education Management", "Financial Services", "Accounting", "Computer Software", "Higher Education", "Automotive", "Government Administration", "Marketing and Advertising", "Banking", "Health, Wellness and Fitness", "Real Estate", "Food & Beverages", "Telecommunications", "Hospitality", "Mechanical or Industrial Engineering", "Primary/Secondary Education", "Internet", "Electrical/Electronic Manufacturing", "Insurance", "Medical Practice", "Human Resources", "Consumer Services", "Transportation/Trucking/Railroad", "Pharmaceuticals", "Restaurants", "Management Consulting", "Civil Engineering", "Research", "Design", "Logistics and Supply Chain", "Law Practice", "Architecture & Planning", "Apparel & Fashion", "Consumer Goods", "Facilities Services", "Food Production", "Non-Profit Organization Management", "Machinery", "Entertainment", "Chemicals", "Wholesale", "Arts and Crafts", "Utilities", "Farming", "Legal Services", "Mining & Metals", "Airlines/Aviation", "Leisure, Travel & Tourism", "Sports", "Building Materials", "Environmental Services", "Professional Training & Coaching", "Medical Devices", "Music", "Individual & Family Services", "Cosmetics", "Mental Health Care", "Industrial Automation", "Security and Investigations", "Staffing and Recruiting", "Aviation & Aerospace", "Graphic Design", "Biotechnology", "Textiles", "Import and Export", "Consumer Electronics", "Public Relations and Communications", "Broadcast Media", "Business Supplies and Equipment", "Writing and Editing", "Military", "Media Production", "Computer Networking", "International Trade and Development", "Renewables & Environment", "Events Services", "Civic & Social Organization", "Photography", "Computer Hardware", "Defense & Space", "Furniture", "Computer & Network Security", "Printing", "Fine Art", "Investment Management", "E-Learning", "Outsourcing/Offshoring", "Warehousing", "Law Enforcement", "Publishing", "Religious Institutions", "Maritime", "Information Services", "Supermarkets", "Executive Office", "Animation", "Government Relations", "Semiconductors", "Program Development", "Plastics", "Online Media", "Public Safety", "Packaging and Containers", "Judiciary", "Alternative Medicine", "Performing Arts", "Commercial Real Estate", "Motion Pictures and Film", "Veterinary", "Computer Games", "Luxury Goods & Jewelry", "International Affairs", "Investment Banking", "Market Research", "Wine and Spirits", "Package/Freight Delivery", "Newspapers", "Translation and Localization", "Recreational Facilities and Services", "Sporting Goods", "Public Policy", "Capital Markets", "Paper & Forest Products", "Libraries", "Wireless", "Venture Capital & Private Equity", "Gambling & Casinos", "Ranching", "Glass, Ceramics & Concrete", "Philanthropy", "Dairy", "Museums and Institutions", "Shipbuilding", "Think Tanks", "Political Organization", "Fishery", "Fund-Raising", "Tobacco", "Railroad Manufacture", "Alternative Dispute Resolution", "Nanotechnology", "Legislative Office", "Mobile Games"],
+          idList: ["technology-and-services", "hospital", "construction", "retail", "education-management", "financial-services", "accounting", "computer-software", "higher-education", "automotive", "government-administration", "marketing-and-advertising", "banking", "health", "real-estate", "food-and-beverages", "telecommunications", "hospitality", "mechanical-or-Industrial", "primary-secondary-education", "internet", "electrical-electronic-manufacturing", "insurance", "medical-practice", "human-resources", "consumer-services", "transportation-trucking-railroad", "pharmaceuticals", "restaurants", "management-consulting", "civil-engineering", "research", "design", "logistics-and-supply", "law-practice", "architecture-and-planning", "apparel-and-fashion", "consumer-goods", "facilities-services", "food-production", "non-profit-organization-management", "machinery", "entertainment", "chemicals", "wholesale", "arts-and-crafts", "utilities", "farming", "legal-services", "mining-and-metals", "airlines-aviation", "leisure-travel-tourism", "sports", "building-materials", "environmental-services", "professional-training-and-coaching", "medical-devices", "music", "individual-and-family-services", "cosmetics", "mental-health-care", "industrial-automation", "security-and-investigations", "staffing-and-recruiting", "aviation-and-aerospace", "graphic-design", "biotechnology", "textiles", "import-and-export", "consumer-electronics", "public-relations-and-communications", "broadcast-media", "business-supplies-and-equipment", "writing-and-editing", "military", "media-production", "computer-networking", "international-trade-and-development", "renewables-and-environment", "events-services", "civic-and-social-organization", "photography", "computer-hardware", "defense-and-space", "furniture", "computer-and-network-security", "printing", "fine-art", "investment-management", "e-learning", "outsourcing-offshoring", "warehousing", "law-enforcement", "publishing", "religious-institutions", "maritime", "information-services", "supermarkets", "executive-office", "animation", "government-relations", "semiconductors", "program-development", "plastics", "online-media", "public-safety", "packaging-and-containers", "judiciary", "alternative-medicine", "performing-arts", "commercial-real-estate", "motion-pictures-and-film", "veterinary", "computer-games", "luxury-goods-and-jewelry", "international-affairs", "investment-banking", "market-research", "wine-and-spirits", "package-freight-delivery", "newspapers", "translation-and-localization", "recreational-facilities-and-services", "sporting-goods", "public-policy", "capital-markets", "paper-and-forest-products", "libraries", "wireless", "venture-capital-and-private-equity", "gambling-and-casinos", "ranching", "glass-ceramics-and-concrete", "philanthropy", "dairy", "museums-and-institutions", "shipbuilding", "think-tanks", "political-organization", "fishery", "fund-raising", "tobacco", "railroad-manufacture", "alternative-dispute-resolution", "nanotechnology", "legislative-office", "mobile-games"],
+          choice: "multiple",
+          name: "target-industries",
+          select: "choices",
+          maxCount: "3",
+        },
+        {
+          label: "Choose company size",
+          placeholder: "Choose company size",
+          items: ["Small and medium size business", "Mid market", "Enterprise"],
+          idList: ["small-and-medium", "mid", "enterprise"],
+          choice: "single",
+          name: "company-size",
+          select: "custom",
+        },
+        {
+          label: "Choose job level",
+          placeholder: "Choose job level",
+          items: ["C-level", "VP", "Head Director", "Manager"],
+          idList: ["c-level", "vp", "head-director", "manager"],
+          choice: "multiple",
+          name: "job-level",
+          select: "custom",
+        },
+        {
+          label: "Choose job function",
+          placeholder: "Choose job function",
+          items: ["Business", "Finance & Administration", "HR", "IT", "Legal", "Sales & Marketing", "Operations", "Procurement", "Support"],
+          idList: ["business", "finance-and-administration", "hr", "it", "legal", "sales-and-marketing", "operations", "procurement", "support"],
+          choice: "multiple",
+          name: "job-function",
+          select: "choices",
+        },
+        {
+          label: "Choose amount of prospects to target",
+          placeholder: "Choose amount of prospects to target",
+          items: ["3000", "4000", "5000", "1000", "1500", "2000", "300", "400"],
+          idList: ["3000-small-and-medium", "4000-small-and-medium", "5000-small-and-medium", "1000-mid", "1500-mid", "2000-mid", "300-enterprise", "400-enterprise"],
+          name: "amount-to-target",
+          choice: "single",
+          select: "custom",
+        },
+      ],
+    emailCampaignCheckout: {
+      title: "ICP Info",
+      list: [
+        {
+            title: "Chosen target countries",
+            content: "USA and Mexico",
+        },
+        {
+            title: "Chosen target industries",
+            content: "Fintech",
+        },
+        {
+            title: "Chosen company size",
+            content: "Enterprise level",
+        },
+        {
+            title: "Job level",
+            content: "VP",
+        },
+        {
+            title: "Job function",
+            content: "HR, IT",
+        },
+        {
+            title: "Chosen amount of prospects to target",
+            content: "400",
+        },
+        {
+            title: "Price",
+            content: "400 USD",
+        },
+      ]
+    },
+    qualifyLeads: [
+      {
+        label: "Choose target countries",
+        placeholder: "Choose target countries",
+        items: ["USA", "Mexico", "USA and Mexico"],
+        idList: ["usa", "mexico", "usa-and-mexico"],
+        choice: "single",
+        name: "target-countries",
+        select: "custom",
+      },
+      {
+        label: "Choose target industries",
+        placeholder: "Choose target industries",
+        items: ["Information Technology and Services", "Hospital & Health Care", "Construction", "Retail", "Education Management", "Financial Services", "Accounting", "Computer Software", "Higher Education", "Automotive", "Government Administration", "Marketing and Advertising", "Banking", "Health, Wellness and Fitness", "Real Estate", "Food & Beverages", "Telecommunications", "Hospitality", "Mechanical or Industrial Engineering", "Primary/Secondary Education", "Internet", "Electrical/Electronic Manufacturing", "Insurance", "Medical Practice", "Human Resources", "Consumer Services", "Transportation/Trucking/Railroad", "Pharmaceuticals", "Restaurants", "Management Consulting", "Civil Engineering", "Research", "Design", "Logistics and Supply Chain", "Law Practice", "Architecture & Planning", "Apparel & Fashion", "Consumer Goods", "Facilities Services", "Food Production", "Non-Profit Organization Management", "Machinery", "Entertainment", "Chemicals", "Wholesale", "Arts and Crafts", "Utilities", "Farming", "Legal Services", "Mining & Metals", "Airlines/Aviation", "Leisure, Travel & Tourism", "Sports", "Building Materials", "Environmental Services", "Professional Training & Coaching", "Medical Devices", "Music", "Individual & Family Services", "Cosmetics", "Mental Health Care", "Industrial Automation", "Security and Investigations", "Staffing and Recruiting", "Aviation & Aerospace", "Graphic Design", "Biotechnology", "Textiles", "Import and Export", "Consumer Electronics", "Public Relations and Communications", "Broadcast Media", "Business Supplies and Equipment", "Writing and Editing", "Military", "Media Production", "Computer Networking", "International Trade and Development", "Renewables & Environment", "Events Services", "Civic & Social Organization", "Photography", "Computer Hardware", "Defense & Space", "Furniture", "Computer & Network Security", "Printing", "Fine Art", "Investment Management", "E-Learning", "Outsourcing/Offshoring", "Warehousing", "Law Enforcement", "Publishing", "Religious Institutions", "Maritime", "Information Services", "Supermarkets", "Executive Office", "Animation", "Government Relations", "Semiconductors", "Program Development", "Plastics", "Online Media", "Public Safety", "Packaging and Containers", "Judiciary", "Alternative Medicine", "Performing Arts", "Commercial Real Estate", "Motion Pictures and Film", "Veterinary", "Computer Games", "Luxury Goods & Jewelry", "International Affairs", "Investment Banking", "Market Research", "Wine and Spirits", "Package/Freight Delivery", "Newspapers", "Translation and Localization", "Recreational Facilities and Services", "Sporting Goods", "Public Policy", "Capital Markets", "Paper & Forest Products", "Libraries", "Wireless", "Venture Capital & Private Equity", "Gambling & Casinos", "Ranching", "Glass, Ceramics & Concrete", "Philanthropy", "Dairy", "Museums and Institutions", "Shipbuilding", "Think Tanks", "Political Organization", "Fishery", "Fund-Raising", "Tobacco", "Railroad Manufacture", "Alternative Dispute Resolution", "Nanotechnology", "Legislative Office", "Mobile Games"],
+        idList: ["technology-and-services", "hospital", "construction", "retail", "education-management", "financial-services", "accounting", "computer-software", "higher-education", "automotive", "government-administration", "marketing-and-advertising", "banking", "health", "real-estate", "food-and-beverages", "telecommunications", "hospitality", "mechanical-or-Industrial", "primary-secondary-education", "internet", "electrical-electronic-manufacturing", "insurance", "medical-practice", "human-resources", "consumer-services", "transportation-trucking-railroad", "pharmaceuticals", "restaurants", "management-consulting", "civil-engineering", "research", "design", "logistics-and-supply", "law-practice", "architecture-and-planning", "apparel-and-fashion", "consumer-goods", "facilities-services", "food-production", "non-profit-organization-management", "machinery", "entertainment", "chemicals", "wholesale", "arts-and-crafts", "utilities", "farming", "legal-services", "mining-and-metals", "airlines-aviation", "leisure-travel-tourism", "sports", "building-materials", "environmental-services", "professional-training-and-coaching", "medical-devices", "music", "individual-and-family-services", "cosmetics", "mental-health-care", "industrial-automation", "security-and-investigations", "staffing-and-recruiting", "aviation-and-aerospace", "graphic-design", "biotechnology", "textiles", "import-and-export", "consumer-electronics", "public-relations-and-communications", "broadcast-media", "business-supplies-and-equipment", "writing-and-editing", "military", "media-production", "computer-networking", "international-trade-and-development", "renewables-and-environment", "events-services", "civic-and-social-organization", "photography", "computer-hardware", "defense-and-space", "furniture", "computer-and-network-security", "printing", "fine-art", "investment-management", "e-learning", "outsourcing-offshoring", "warehousing", "law-enforcement", "publishing", "religious-institutions", "maritime", "information-services", "supermarkets", "executive-office", "animation", "government-relations", "semiconductors", "program-development", "plastics", "online-media", "public-safety", "packaging-and-containers", "judiciary", "alternative-medicine", "performing-arts", "commercial-real-estate", "motion-pictures-and-film", "veterinary", "computer-games", "luxury-goods-and-jewelry", "international-affairs", "investment-banking", "market-research", "wine-and-spirits", "package-freight-delivery", "newspapers", "translation-and-localization", "recreational-facilities-and-services", "sporting-goods", "public-policy", "capital-markets", "paper-and-forest-products", "libraries", "wireless", "venture-capital-and-private-equity", "gambling-and-casinos", "ranching", "glass-ceramics-and-concrete", "philanthropy", "dairy", "museums-and-institutions", "shipbuilding", "think-tanks", "political-organization", "fishery", "fund-raising", "tobacco", "railroad-manufacture", "alternative-dispute-resolution", "nanotechnology", "legislative-office", "mobile-games"],
+        choice: "multiple",
+        name: "target-industries",
+        select: "choices",
+        maxCount: "3",
+      },
+      {
+        label: "Choose company size",
+        placeholder: "Choose company size",
+        items: ["Small and medium size business", "Mid market", "Enterprise"],
+        idList: ["small-and-medium", "mid", "enterprise"],
+        choice: "single",
+        name: "company-size",
+        select: "custom",
+      },
+      {
+        label: "Choose job level",
+        placeholder: "Choose job level",
+        items: ["C-level", "VP", "Head Director", "Manager"],
+        idList: ["c-level", "vp", "head-director", "manager"],
+        choice: "multiple",
+        name: "job-level",
+        select: "custom",
+      },
+      {
+        label: "Choose job function",
+        placeholder: "Choose job function",
+        items: ["Business", "Finance & Administration", "HR", "IT", "Legal", "Sales & Marketing", "Operations", "Procurement", "Support"],
+        idList: ["business", "finance-and-administration", "hr", "it", "legal", "sales-and-marketing", "operations", "procurement", "support"],
+        choice: "multiple",
+        name: "job-function",
+        select: "choices",
+      },
+      {
+        label: "Choose amount of prospects to target",
+        placeholder: "Choose amount of prospects to target",
+        items: ["3000", "4000", "5000", "1000", "1500", "2000", "300", "400"],
+        idList: ["3000-small-and-medium", "4000-small-and-medium", "5000-small-and-medium", "1000-mid", "1500-mid", "2000-mid", "300-enterprise", "400-enterprise"],
+        name: "amount-to-target",
+        choice: "single",
+        select: "custom",
+      },
+    ],
+    qualifyLeadsCheckout: {
+      title: "ICP Info",
+      list: [
+        {
+            title: "Chosen target countries",
+            content: "USA and Mexico",
+        },
+        {
+            title: "Chosen target industries",
+            content: "Fintech",
+        },
+        {
+            title: "Chosen company size",
+            content: "Enterprise level",
+        },
+        {
+            title: "Job level",
+            content: "VP",
+        },
+        {
+            title: "Job function",
+            content: "HR, IT",
+        },
+        {
+            title: "Chosen amount of prospects to target",
+            content: "400",
+        },
+        {
+            title: "Price",
+            content: "400 USD",
+        },
+      ]
+    },
+    linkedinFollowersCheckout: {
+      title: "ICP Info",
+      list: [
+        {
+            title: "Your Linkedin Profile",
+            content: "https://linkiedin/sample/123121123",
+            link: "link",
+            href: "https://linkiedin/sample/123121123",
+        },
+        {
+            title: "Chosen Amount of Followers",
+            content: "100",
+        },
+        {
+            title: "Current Number of LinkedIn Followers",
+            content: "300",
+        },
+        {
+            title: "Uploaded Screenshot",
+            content: "Screenshot_111.png",
+            screenshot: "screenshot",
+        },
+        {
+            title: "Price",
+            content: "50 USD",
+        },
+      ]
+    },
+  }

@@ -1,0 +1,16 @@
+extends ../base/layout
+
+block variables
+  - const title = "Self Service marketplace"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "header--shadow"
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = "login"
+
+block main
+  main
+    h1.visually-hidden Login page
+    +login
+block modals

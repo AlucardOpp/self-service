@@ -1,0 +1,17 @@
+mixin login()
+  .login(data-tabs="parent")
+    .container
+      .login__controls(data-tabs="controls")
+        each control, i in login.controls
+          if i === 0
+            button.login__control(type="button", data-tabs="control") !{control}
+          else
+            button.login__control.is-active(type="button", data-tabs="control") !{control}
+
+      +steps(stepsPath, "signIn").login__steps
+
+      .login__content(data-tabs="content")
+        .login__element(data-tabs="element")
+          +form-sign-up
+        .login__element(data-tabs="element")
+          +form-sign-in

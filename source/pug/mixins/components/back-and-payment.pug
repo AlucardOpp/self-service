@@ -1,0 +1,7 @@
+mixin back-and-payment
+  .back-and-payment
+    .container
+      .page-content__container
+        .back-and-payment__buttons
+          +btn("Back", {name: 'icon-arrow-left', width: 24, height: 24}, "a").back-and-payment__back.btn--medium.btn--grey-inner.btn--hover-opacity(href="#")
+          +btn("Payment", {name: 'icon-arrow-right', width: 24, height: 24}, "submit").back-and-payment__payment.btn--medium.btn--blue-inner.btn--hover-bc-summer-sky

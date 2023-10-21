@@ -1,0 +1,34 @@
+extends ../base/layout
+
+block variables
+  - const title = "Email Campaign — Self Service Marketplace"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "header--shadow"
+  - const hasAuth = true
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = ""
+
+block main
+  main
+    .page-content
+      section.service
+        h1.visually-hidden!="Email Campaign"
+        .page-content__intro
+          .container
+            .page-content__container
+              .page-content__breadcrumbs
+                +breadcrumbs(breadcrumbsPath, "emailCampaign")
+              p.page-content__description!="Create content for a Drip Campaign and send it to a custom prospect list, inviting your prospects to book a discovery call. Launch the appointment booking campaign in three simple steps."
+              .page-content__buttons
+                +btn("Guidance & Q+A", {name: 'icon-guidance', width: 24, height: 24}, "a").page-content__guidance.btn--medium.btn--blue.btn--hover-bc-summer-sky(href="#")
+                +link("#", "See how it works", "icon").page-content__link
+              +steps(stepsPath, "details").steps--mobile-hidden
+        .service__form
+          form(method="post" action="https://echo.htmlacademy.ru")
+            +service-info(serviceInfo.emailCampaign)
+            +email-templates(emailTemplates.emailCampaign)
+            +icp-info(icpInfo.emailCampaign)
+            +back-and-payment
+block modals

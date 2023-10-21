@@ -1,0 +1,25 @@
+mixin intro ()
+  section#intro.intro
+    .intro__bg
+      +picture-cropping('content/intro', 'bg', 'svg', 1920, 1348, ' ', [
+        {vp: 1359, suffix: '-720'},
+        {vp: 1919, suffix: '-1360'},
+      ])
+    .container
+      .intro__wrapper
+        .intro__column
+          h1.title.title--h1.intro__title !{intro.title}
+          .intro__text
+            p !{intro.text}
+        .intro__column
+          ul.intro__advantages-list
+            each it, i in intro.advantages
+              li.intro__advantages-item
+                +icon(`icon-advantage${i + 1}`, 65, 65).intro__advantages-item-svg
+                span.intro__advantage-text !{it.text}
+      +btn(intro.link.text, {name: 'icon-switch', width: 34, height: 34}, "a").intro__link.btn--big.btn--blue.btn--hover-bc-summer-sky(href=intro.link.href)
+      +slider(intro.brandsImages, 'clients').intro__slider
+      section.intro__description
+        h2.title.title--h3.intro__description-title !{intro.description.title}
+        .intro__description-text
+          p !{intro.description.text}

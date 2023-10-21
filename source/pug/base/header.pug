@@ -1,0 +1,30 @@
+mixin header(headerMods, currentPage, mod)
+  header.header.header--nojs(class=headerMods)
+    .container
+      +logo().logo--black.header__logo
+      button.header__burger(type="button", aria-label="Переключатель меню", title="Переключатель меню")
+        span.header__burger-span
+      .header__nav
+        if hasAuth
+          nav.main-nav.main-nav--auth
+            ul.main-nav__list
+              each link in headerData
+                li.main-nav__item
+                  a.link.link--black.js-scroll-trigger(href=link.href)=link.text
+          .auth-panel
+            ul.auth-panel__list
+              li.auth-panel__item
+                  a.auth-panel__link.link(href="#") Projects
+              li.auth-panel__item
+                a.auth-panel__link(href="#")
+                  +icon("icon-auth", 14, 18).auth-panel__icon-user
+              li.auth-panel__item
+                button(class="auth-panel__link btn", type="button")
+                  +icon("icon-exit", 17, 16).auth-panel__icon-exit
+        else
+          nav.main-nav
+            ul.main-nav__list
+              each link in headerData
+                li.main-nav__item
+                  a.link.link--black.js-scroll-trigger(href=link.href)=link.text
+          +btn('Sign up', '', 'a').header__auth-btn.btn--small.btn--white.btn--blue-border.btn--hover-bc-summer-sky-c-white

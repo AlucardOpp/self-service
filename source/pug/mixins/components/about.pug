@@ -1,0 +1,12 @@
+mixin about()
+  section#about.about
+    .container.container--no-padding
+      h2.title.title--h3.about__title !{about.title}
+      .about__desc
+        p !{about.desc}
+      .about__list
+        each it in cardsRating
+          .about__item
+            +card-rating(it)
+      p.about__sub !{about.sub}
+      +btn(about.link.text, {name: 'icon-pointer', width: 34, height: 34}, 'a').about__link.btn--big.btn--blue.btn--hover-bc-summer-sky(href=about.link.href)

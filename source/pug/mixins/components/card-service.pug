@@ -1,0 +1,28 @@
+mixin card-service(data, inner)
+  if (inner === "inner")
+    - var {iconName, title, lead, text} = data || {}
+    .card-service&attributes(attributes)
+      .card-service__top
+        .card-service__icon-wrapper
+          +icon(iconName, 90, 90).card-service__icon
+        h3.title.title--h4.title--center.card-service__title!= title
+        +dotted.card-service__dotted.dotted--white.dotted--opacity
+        a.card-service__see-link(href='#')
+          +icon('icon-play', 34, 34).card-service__see-link-icon-wrap
+          .card-service__see-link-text See how it works
+        +btn('Start').btn--small.btn--white.btn--hover-c-summer-sky.btn--shadow.card-service__start-btn
+  else
+    - var {iconName, title, lead, text} = data || {}
+    .card-service&attributes(attributes)
+      .card-service__top
+        .card-service__icon-wrapper
+          +icon(iconName, 90, 90).card-service__icon
+        h3.title.title--h4.title--center.card-service__title!= title
+        +dotted.card-service__dotted.dotted--white.dotted--opacity
+        a.card-service__see-link(href='#')
+          +icon('icon-play', 34, 34).card-service__see-link-icon-wrap
+          .card-service__see-link-text See how it works
+        +btn('Start').btn--small.btn--white.btn--hover-c-summer-sky.btn--shadow.card-service__start-btn
+      .card-service__bottom
+        p.card-service__lead!= lead
+        p.card-service__text!= text

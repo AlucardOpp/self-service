@@ -1,0 +1,8 @@
+mixin steps(path, page)
+  .steps(class!=attributes.class)
+    ul.steps__list
+      each item in path[page]
+        if (item.active === "true")
+          li.steps__item.steps__item--active!=item.name
+        else
+          li.steps__item!=item.name

@@ -1,0 +1,36 @@
+extends ../base/layout
+
+block variables
+  - const title = "Linkedin Followers — Self Service Marketplace"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "header--shadow"
+  - const hasAuth = true
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = ""
+
+block main
+  main
+    .page-content
+      section.service
+        h1.visually-hidden!="Linkedin Followers"
+        .page-content__intro
+          .container
+            .page-content__container.page-content__container--linkedin-followers
+              .page-content__breadcrumbs
+                +breadcrumbs(breadcrumbsPath, "linkedinFollowers")
+              p.page-content__description!="LinkedIn is an fundamental and essential business tool to grow your business. When your potentional clients research <br> your company profile, they often review the number of LinkedIN followers. We can help you gain followers in three simple steps."
+              .page-content__buttons
+                +btn("Guidance & Q+A", {name: 'icon-guidance', width: 24, height: 24}, "a").page-content__guidance.btn--medium.btn--blue.btn--hover-bc-summer-sky(href="#")
+                +link("#", "See how it works", "icon").page-content__link
+              +steps(stepsPath, "details").steps--mobile-hidden
+        .service__form
+          form(method="post" action="https://echo.htmlacademy.ru")
+            ul.service__list
+              each item in serviceInfo.linkedinFollowers
+                  li.service__field
+                    +service-info(item, item.type)
+            +upload-file(uploadFile.linkedinFollowers).service__upload
+            +back-and-payment
+block modals

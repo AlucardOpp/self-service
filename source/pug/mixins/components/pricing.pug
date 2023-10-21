@@ -1,0 +1,14 @@
+mixin pricing(data)
+  #pricing.pricing
+    .pricing__bg
+      +picture-cropping('svg/pricing', 'bg', 'svg', 1920, 743, ' ', [
+        {vp: 719, suffix: '-320'},
+        {vp: 1359, suffix: '-720'},
+        {vp: 1919, suffix: '-1360'},
+      ])
+    .pricing__inner.container
+      h2.title.title--h2.title--center.pricing__title pricing
+      .pricing__list
+        each it in cardPricingList
+          .pricing__item
+            +card-price(it)

@@ -1,0 +1,78 @@
+extends ../base/layout
+
+block variables
+  - const title = "UI-kit"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = ""
+
+block main
+  style
+    include ../page-css/ui-kit.css
+
+  main(style='padding-top: var(--header-height, 0)')
+    .container
+      a.components-backwards(href="index.html")
+        span &larr;
+        span вернуться на разводящую
+      h1 Компоненты, используемые в вёрстке
+
+      //- все модалки проекта добавляем сюда, для удобства тестирования
+      section
+        h2 Модалки
+        p
+          a(href="#", data-open-modal="feedback") modal--feedback link
+        p
+          a(href="#", data-open-modal="success") modal--success link
+
+      section
+        h2 Название компонента или группы компонентов
+
+        p Класс компонента \ модификаторы
+        p(style="color: red;") При необходимости, подсказки \ предупреждение \ важная информация
+        div Компонент
+        code Компонент
+
+      section
+        h2 Слайдер по умолчанию
+        +slider(Array(5).fill(''), 'default')
+        code +slider(Array(5).fill(''), 'default')
+
+      section
+        h2 кнопки
+        +btn('How it works', {name: 'icon-switch', width: 34, height: 34}).btn--big.btn--blue.btn--hover-bc-summer-sky
+        code +btn('How it works', {name: 'icon-switch', width: 34, height: 34}).btn--big.btn--blue.btn--hover-bc-summer-sky
+
+        +btn('Go to website', {name: 'icon-pointer', width: 34, height: 34}).btn--big.btn--blue.btn--hover-bc-summer-sky
+        code +btn('Go to website', {name: 'icon-pointer', width: 34, height: 34}).btn--big.btn--blue.btn--hover-bc-summer-sky
+
+        +btn('Sign up').btn--small.btn--white.btn--blue-border.btn--hover-bc-summer-sky-c-white
+        code +btn('Sign up').btn--small.btn--white.btn--blue-border.btn--hover-bc-summer-sky-c-white
+
+        +btn('Start').btn--small.btn--white.btn--hover-c-summer-sky.btn--shadow
+        code +btn('Start').btn--small.btn--white.btn--hover-c-summer-sky.btn--shadow
+
+        +btn('Start', '', 'a').btn--small.btn--blue.btn--hover-c-columbia-blue.btn--shadow
+        code +btn('Start', '', 'a').btn--small.btn--blue.btn--hover-c-columbia-blue.btn--shadow.btn--shadow
+
+      section
+        h2 Карточка services
+        div(style='display: flex; min-height: 764px')
+          +card-service(cardServiceList[0])
+        code +card-service(cardServiceList[0])
+
+      section
+        h2 Карточка pricing
+        div(style='display: flex; padding: 20px; background-color: #2F80ED;')
+          div(style='width: 335px')
+            +card-price(cardPricingList[0])
+        code +card-service(cardPricingList[0])
+
+block modals
+  +modal("modal--feedback")(data-modal="feedback")
+    +modal-feedback()
+  +modal("modal--success modal--no-scale modal--fit-content")(data-modal="success")
+    +modal-success()

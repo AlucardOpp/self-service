@@ -1,0 +1,16 @@
+.dotted {
+  width: 100%;
+  background-image: $grey-to-right;
+  background-position: top 0 left 2px;
+  background-size: 7px 2px;
+  height: 2px;
+  background-repeat: repeat-x;
+
+  &--white {
+    background-image: $white-to-right;
+  }
+
+  &--opacity {
+    opacity: 0.5;
+  }
+}

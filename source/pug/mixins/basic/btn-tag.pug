@@ -1,0 +1,17 @@
+mixin btn-tag(tagName)
+  case tagName
+    when 'a'
+      a(href='#')&attributes(attributes)
+        block
+    when 'div'
+      div&attributes(attributes)
+        block
+    when 'span'
+      span&attributes(attributes)
+        block
+    when 'submit'
+      button(type='submit')&attributes(attributes)
+        block
+    default
+      button(type='button')&attributes(attributes)
+        block

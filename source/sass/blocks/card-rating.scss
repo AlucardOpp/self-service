@@ -1,0 +1,98 @@
+.card-rating {
+  width: 454px;
+  padding: 71px 0 54px 0;
+  box-shadow: 0 0 37.5px rgba($color-default-black, 0.07);
+  border-radius: 10px;
+  text-align: center;
+
+  @include vp--1919 {
+    width: 100%;
+    padding: 34px 0 17px;
+    box-shadow: 0 0 35px rgba($color-default-black, 0.07);
+  }
+
+  @include vp--1359 {
+    padding-bottom: 25px;
+  }
+
+  @include vp--719 {
+    padding-top: 44px;
+    padding-bottom: 29px;
+  }
+
+  &__img {
+    width: 288px;
+    height: 80px;
+    margin: 0 auto 40px;
+
+    @include vp--1919 {
+      width: 133px;
+      height: 37px;
+      margin-bottom: 8px;
+    }
+
+    @include vp--1359 {
+      width: 153px;
+      height: 46px;
+      margin-bottom: 13px;
+    }
+
+    @include vp--719 {
+      width: 173px;
+      height: 49px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__rating {
+    width: 361px;
+    margin: 0 auto 47px;
+
+    @include vp--1919 {
+      width: 184px;
+      margin-bottom: 10px;
+    }
+
+    @include vp--1359 {
+      width: 219px;
+      margin-bottom: 16px;
+    }
+
+    @include vp--719 {
+      width: 240px;
+      margin-bottom: 23px;
+    }
+  }
+
+  &__out {
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20.44px;
+
+    @include vp--1919 {
+      font-size: 12px;
+      line-height: 17.52px;
+    }
+  }
+
+  & svg {
+    width: 46px;
+    height: 46px;
+
+    @include vp--1919 {
+      width: (46px / 1.5);
+      height: (46px / 1.5);
+    }
+
+    @include vp--767 {
+      width: (46px / 1.9);
+      height: (46px / 1.9);
+    }
+  }
+}

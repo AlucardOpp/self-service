@@ -1,0 +1,59 @@
+.form-sign-in {
+  max-width: 1026px;
+  width: 100%;
+  margin: 0 auto;
+  color: $color-dodger-blue;
+
+  .input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 42px;
+    margin-bottom: 54px;
+
+    @include vp--1919 {
+      margin-bottom: 40px;
+    }
+
+    @include vp--1359 {
+      column-gap: 28px;
+    }
+
+    @include vp--719 {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+  .input-box {
+    @include vp--719 {
+      margin-bottom: 19px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__submit {
+    margin: 0 auto;
+    margin-bottom: 48px;
+    font-size: 20px;
+
+    @include vp--1919 {
+      margin-bottom: 38px;
+    }
+
+    @include vp--719 {
+      margin: 0 0 38px;
+    }
+  }
+
+  &__forgot-password {
+    display: block;
+    text-align: center;
+
+    @include vp--719 {
+      text-align: left;
+    }
+  }
+}

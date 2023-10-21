@@ -1,0 +1,47 @@
+.back-and-payment__buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include vp--719 {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+.back-and-payment__back {
+  margin-right: 13px;
+  padding-right: 24px;
+
+  @include vp--1919 {
+    padding-left: 29px;
+    padding-right: 29px;
+  }
+
+  @include vp--719 {
+    padding-right: 21px;
+    padding-left: 28px;
+    width: auto;
+
+    & span {
+      display: none;
+    }
+
+    & .btn__icon-wrap {
+      margin-right: 0;
+    }
+  }
+}
+
+.back-and-payment__payment {
+  padding-left: 24px;
+
+  @include vp--1919 {
+    padding-right: 33px;
+    padding-left: 23px;
+  }
+
+  @include vp--719 {
+    width: auto;
+    padding-right: 28px;
+  }
+}

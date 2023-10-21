@@ -1,0 +1,88 @@
+.link {
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  transition: color $trans--300, opacity $trans--300;
+  user-select: none;
+
+  @include hover-focus {
+    color: $color-summer-sky;
+  }
+
+  &--big {
+    display: flex;
+    align-items: center;
+  }
+
+  &--icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include hover-focus {
+      color: $color-columbia-blue;
+    }
+
+    @include vp--719 {
+      justify-content: flex-start;
+    }
+  }
+
+  &--inner {
+    user-select: auto;
+    text-decoration: underline;
+    color: $color-summer-sky;
+    overflow-wrap: break-word;
+
+    @include hover-focus {
+      opacity: 0.7;
+    }
+  }
+
+  &--arrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include hover-focus {
+      color: $color-columbia-blue;
+
+      & svg {
+        fill: $color-columbia-blue;
+      }
+    }
+  }
+
+  &.link--icon span {
+    max-width: 83px;
+
+    @include vp--719 {
+      max-width: none;
+    }
+  }
+
+  &.link--icon svg {
+    width: 34px;
+    height: 34px;
+    margin-right: 7px;
+
+    @include vp--1919 {
+      width: 26px;
+      height: 26px;
+      margin-right: 8px;
+    }
+  }
+
+  &.link--arrow svg {
+    width: 9px;
+    height: 9px;
+    fill: $color-dodger-blue;
+    transition: fill $trans--300;
+    margin-left: 9px;
+
+    @include vp--1919 {
+      margin-left: 10px;
+    }
+  }
+}

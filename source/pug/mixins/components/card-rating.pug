@@ -1,0 +1,8 @@
+mixin card-rating(data)
+  .card-rating&attributes(attributes)
+    .card-rating__img
+      +img("content/about", data.imgName, "png", 280, 79, "Logo")
+    .rating.card-rating__rating(aria-hidden='true')
+      .rating__item(style=`width: ${data.rate * 20}%;`)
+        .rating__item-bg(style=`background-size: ${100 / data.rate * 5}%;`)
+    p.card-rating__out!= `${data.rate} out of 5 stars`

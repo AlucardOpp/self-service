@@ -1,0 +1,286 @@
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  text-decoration: none;
+  user-select: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &--big {
+    padding: 23px 34px 23px 24px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    text-transform: uppercase;
+    border-radius: 40px;
+
+    @include vp--1919 {
+      padding: 17.5px 19px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .btn__icon-wrap {
+      display: block;
+      width: 34px;
+      height: 34px;
+      margin-right: 18px;
+
+      @include vp--1919 {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &--small {
+    padding: 7px 23px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    border-radius: 40px;
+
+    @include vp--1359 {
+      padding: 2.5px 17px;
+      font-size: 16px;
+      line-height: 31.36px;
+    }
+
+    @include vp--719 {
+      padding: 4.5px 20.5px;
+      font-size: 14px;
+      line-height: 27.44px;
+    }
+  }
+
+  &--medium {
+    padding: 28px 30px 28px 28px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 21px;
+    border-radius: 40px;
+    text-transform: uppercase;
+
+    .btn__icon-wrap {
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin-right: 13px;
+    }
+
+    @include vp--1919 {
+      padding: 18px 23px;
+
+      .btn__icon-wrap {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &--medium-thanks {
+    padding: 28px 37px 28px 30px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 21px;
+    border-radius: 40px;
+    text-transform: uppercase;
+
+    .btn__icon-wrap {
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin-right: 13px;
+    }
+
+    @include vp--1919 {
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+  }
+
+  &--medium-upload {
+    padding: 15px 35px 14px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 31px;
+    border-radius: 40px;
+    text-transform: uppercase;
+
+    .btn__icon-wrap {
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin-right: 19px;
+    }
+  }
+
+  &--blue {
+    background-color: $color-dodger-blue;
+    transition: background-color $trans--300;
+    color: $color-default-white;
+  }
+
+  &--white {
+    color: $color-dodger-blue;
+    background-color: $color-default-white;
+  }
+
+  &--shadow {
+    box-shadow: 0 0 70px rgba($color-default-black, 0.2);
+  }
+
+  &--grey-inner {
+    color: $color-default-white;
+    background-color: $color-silver;
+    border-radius: 40px 10px 10px 40px;
+
+    @include vp--1919 {
+      border-radius: 40px 15px 15px 40px;
+    }
+  }
+
+  &--blue-inner {
+    background-color: $color-dodger-blue;
+    transition: background-color $trans--300;
+    color: $color-default-white;
+    border-radius: 10px 40px 40px 10px;
+
+    @include vp--1919 {
+      border-radius: 15px 40px 40px 15px;
+    }
+  }
+
+  &--blue-border {
+    border: 2px solid $color-summer-sky;
+  }
+
+  &--hover-bc-summer-sky {
+    transition: background-color $trans--300;
+
+    @include hover-focus {
+      background-color: $color-summer-sky-2;
+    }
+  }
+
+  &--hover-bc-summer-sky-c-white {
+    transition: color $trans--300, background-color $trans--300;
+
+    @include hover-focus {
+      color: $color-default-white;
+      background-color: $color-summer-sky;
+    }
+  }
+
+  &--hover-c-summer-sky {
+    transition: color $trans--300;
+
+    @include hover-focus {
+      color: $color-summer-sky-2;
+    }
+  }
+
+  &--hover-c-columbia-blue {
+    transition: color $trans--300;
+
+    @include hover-focus {
+      color: $color-columbia-blue;
+    }
+  }
+
+  &--hover-opacity {
+    transition: opacity $trans--300;
+
+    @include hover-focus {
+      opacity: 0.7;
+    }
+  }
+
+  &--sign {
+    padding: 7px 23px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 35.28px;
+    color: $color-summer-sky;
+    background-color: $color-default-white;
+    border: 2px solid $color-summer-sky;
+    border-radius: 40px;
+    transition: background-color $trans--300;
+
+    @include vp--1359 {
+      padding: 2.5px 17px;
+      font-size: 16px;
+      line-height: 31.36px;
+    }
+
+    @include vp--719 {
+      padding: 4.5px 20.5px;
+      font-size: 14px;
+      line-height: 27.44px;
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+      background-color: $color-summer-sky;
+    }
+  }
+
+  &--start {
+    &.btn--white {
+      padding: 12px 23px;
+      color: $color-dodger-blue;
+      background-color: $color-default-white;
+      box-shadow: 0 0 40px rgba($color-default-black, 0.1);
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 38.08px;
+      text-align: center;
+      border-radius: 31px;
+      transition: background-color $trans--300, color $trans--300;
+
+      @include vp--1919 {
+        padding: 8px 23px;
+        font-size: 18px;
+        line-height: 24.48px;
+      }
+
+      @include hover-focus {
+        color: $color-summer-sky-2;
+      }
+    }
+
+    &.btn--blue {
+      padding: 10px 20px;
+      color: $color-default-white;
+      background-color: $color-dodger-blue;
+      box-shadow: 0 0 70px rgba($color-default-black, 0.2);
+      border-radius: 31px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 27.2px;
+      transition: color $trans--300 background-color $trans--300;
+
+      @include vp--1919 {
+        padding: 8px 20px;
+        font-size: 18px;
+        line-height: 24.48px;
+        border-radius: 20px;
+      }
+
+      @include vp--1359 {
+        padding: 7.5px 20px;
+      }
+
+      @include hover-focus {
+        color: $color-columbia-blue;
+      }
+    }
+  }
+}

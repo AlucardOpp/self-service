@@ -1,0 +1,34 @@
+.logo {
+  width: 111px;
+  height: 35px;
+
+  &[href] {
+    transition: color $trans--300;
+  }
+
+  &--black {
+    color: $color-eclipse;
+
+    @include hover-focus {
+      &[href] {
+        color: $color-summer-sky;
+      }
+    }
+  }
+
+  &--white {
+    color: $color-default-white;
+
+    @include hover-focus {
+      &[href] {
+        color: $color-eclipse;
+      }
+    }
+  }
+
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

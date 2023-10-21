@@ -1,0 +1,71 @@
+mixin email-templates(data, checkout)
+  if (checkout === "checkout")
+    section.email-templates.email-templates--checkout
+      .container
+        .page-content__container.page-content__container--checkout.email-checkout
+          h2!="Email templates"
+          strong!="Check your inserted info"
+          each email in data
+            h3!=`${email[0].number} email`
+            p
+              b!="Hi {{contact.first_name}},"
+            if (data === emailTemplates.webinarCheckout)
+              if (email[0].number === "First")
+                p!=`I'm doing market research for ${email[1].text}`
+                p!=`${email[2].text} <br> and you came across my radar on LinkedIn. I appreciate what {{Lead Company Name}} is up to and I wanted to reach out because ${email[3].text} is inviting similar companies to ${email[4].text}.`
+                p!=`Are you the right person to benefit from ${email[5].text} <br> or is there someone you could connect me with, if not?`
+                p Feel free to register here #[a(class="link link--inner" href=`${email[6].link}` aria-label="Go to webinar link") #{email[6].text}] <br> if this is right up your alley share this link with your team.
+              else if (email[0].number === "Second")
+                p!=`Just popping this up to the top of your inbox. Are you the best person to invite to ${email[1].text} <br> or is there a colleague you can connect me with? <br> To further elaborate on the potential synergy, ${email[2].text} <br> ${email[3].text}.`
+                p You can visit #[a(class="link link--inner" href=`${email[4].link}` aria-label="Go to collaboration link") #{email[4].text}] to see how #{email[5].text}.
+                p if this is of interest, feel free to register for this free online event by using this link #[a(class="link link--inner" href=`${email[6].link}` aria-label="Go to webinar link") <br> #{email[6].text}]
+              else if (email[0].number === "Third")
+                p!=`Hi {{contact.first_name}},`
+                p!=`I want to be respectful of your time, so this is my last email. Do you have ${email[1].text} <br> to learn how other companies in the ${email[2].text} industry have transformed their business by collaborating with ${email[3].text}`
+                p If this is of interest, feel free to register for this free online event by using this link #[a(class="link link--inner" href=`${email[4].link}` aria-label="Go to webinar link") <br> #{email[4].text}]
+            else if (data === emailTemplates.emailCampaignCheckout)
+              if (email[0].number === "First")
+                p!=`I'm doing market research for ${email[1].text}`
+                p!=`${email[2].text} <br> and you came across my radar on LinkedIn. I appreciate what {{Lead Company Name}} is up to and I wanted to reach out because ${email[3].text} is partnering with similar companies to ${email[4].text}.`
+                p!=`Are you the right person to discuss ${email[5].text} <br> or is there someone you could connect me with, if not?`
+                p!=`Let me know if this is right up your alley and I will coordinate a discovery call <br> ${email[6].text} team.`
+              else if (email[0].number === "Second")
+                p!=`Just popping this up to the top of your inbox.  Are you the best person to speak with regards to <br> ${email[1].text} or is there a colleague you can connect me with? <br> To further elaborate on the potential synergy, ${email[2].text} ${email[3].text}.`
+                p You can visit #[a(class="link link--inner" href=`${email[4].link}` aria-label="Go to collaboration link") #{email[4].text}] to see how #{email[5].text}.
+                p!="If this is of interest, let me help you book a discovery call to elaborate on the details. When would be a good time for you? Alternatively, you can book a call by using this link"
+                a.link.link--inner(href=`${email[6].link}` aria-label="Go to hubspot link")!="Sample calendly or hubspot link"
+              else if (email[0].number === "Third")
+                p!=`I want to be respectful of your time, so this is my last email. Do you have 15 minutes to learn how other companies <br> in the ${email[1].text} industry have transformed their business by collaborating with ${email[2].text}?`
+                p!="When would be a good time for a brief phone discussion with you?"
+            else if (data === emailTemplates.qualifyLeadsCheckout)
+              if (email[0].number === "First")
+                p!=`I'm doing market research for ${email[1].text}`
+                p!=`${email[2].text} <br> and you came across my radar on LinkedIn. I appreciate what {{Lead Company Name}} is up to and I wanted to reach out because ${email[3].text} is partnering with similar companies to ${email[4].text}.`
+                p!=`Are you the right person to discuss ${email[5].text} <br> or is there someone you could connect me with, if not?`
+                p!=`Let me know if this is right up your alley and I will coordinate a discovery call <br> ${email[6].text} team.`
+              else if (email[0].number === "Second")
+                p!=`Just popping this up to the top of your inbox.  Are you the best person to speak with regards to <br> ${email[1].text} or is there a colleague you can connect me with? <br> To further elaborate on the potential synergy, ${email[2].text} ${email[3].text}.`
+                p You can visit #[a(class="link link--inner" href=`${email[4].link}` aria-label="Go to collaboration link") #{email[4].text}] to see how #{email[5].text}.
+                p!="If this is of interest, let me help you book a discovery call to elaborate on the details. When would be a good time for you? Alternatively, you can book a call by using this link"
+                a.link.link--inner(href=`${email[6].link}` aria-label="Go to hubspot link")!="Sample calendly or hubspot link"
+              else if (email[0].number === "Third")
+                p!=`I want to be respectful of your time, so this is my last email. Do you have 15 minutes to learn how other companies <br> in the ${email[1].text} industry have transformed their business by collaborating with ${email[2].text}?`
+                p!="When would be a good time for a brief phone discussion with you?"
+  else
+    .email-templates
+      .container
+        fieldset.page-content__container
+          legend.title.title--inner!="Email Campaign templates"
+          p.email-templates__description!="Insert your info into the fields"
+          each email in data
+            fieldset.email-templates__email
+              legend.email-templates__number!=`${email.number} email`
+              p.email-templates__hello.email-templates__text!="Hi {{contact.first_name}},"
+              each item, index in email
+                if (index === "number")
+                else
+                  .email-templates__field
+                    each field in item
+                      +form-input(field.type, field.name, field.id, field.label, field.placeholder, field.hidden)
+                      if field.bottomText
+                        p.email-templates__text!=field.bottomText

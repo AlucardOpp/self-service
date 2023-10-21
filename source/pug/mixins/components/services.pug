@@ -1,0 +1,17 @@
+mixin services(data, inner)
+  if (inner === "inner")
+    section.services
+      .services__inner.services__inner--inner.container
+        h2.visually-hidden Services
+        .services__list
+          each it in data
+            .services__item
+              +card-service(it, inner)
+  else
+    #services.services
+      .services__inner.container
+        h2.title.title--h2.title--center.services__title Services
+        .services__list
+          each it in data
+            .services__item
+              +card-service(it)

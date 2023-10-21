@@ -1,0 +1,56 @@
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  margin-left: -4px;
+}
+
+.breadcrumbs__item {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: $color-silver;
+  margin-left: 4px;
+  position: relative;
+
+  &::after {
+    position: relative;
+    content: "/";
+    font-size: 18px;
+    line-height: 23px;
+    color: $color-silver;
+  }
+
+  &:last-child {
+    pointer-events: none;
+    color: $color-eclipse;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 63px;
+    width: 100%;
+    margin-top: 3px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include vp--1919 {
+    &:last-child {
+      line-height: 50px;
+      font-size: 40px;
+      margin-top: 4px;
+    }
+  }
+
+  @include vp--719 {
+    &:last-child {
+      font-size: 27px;
+      line-height: 38px;
+    }
+  }
+}

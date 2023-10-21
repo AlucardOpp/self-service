@@ -1,0 +1,26 @@
+mixin picture-cropping(path, image, format, width, height, altText, mediaData)
+  - var mediaData = mediaData instanceof Array ? mediaData : [{vp: 767, suffix: '-375'}];
+  picture
+    if format !== 'svg'
+      each it in mediaData
+        -
+          var {
+            rule = 'max-width',
+            vp = 767,
+            suffix = '',
+          } = it || {};
+        source(type='image/webp', media=`(${rule}: ${vp}px)`, srcset=`img/${path}/${image}${suffix}.webp, img/${path}/${image}${suffix}@2x.webp 2x`)
+    each it in mediaData
+      -
+        var {
+          rule = 'max-width',
+          vp = 767,
+          suffix = '',
+        } = it || {};
+      source(media=`(${rule}: ${vp}px)`, srcset=(format !== 'svg'
+        ? `img/${path}/${image}${suffix}.${format}, img/${path}/${image}${suffix}.${format} 2x`
+        : `img/${path}/${image}${suffix}.${format}`))
+    if format !== 'svg'
+      source(type='image/webp', srcset=`img/${path}/${image}.webp, img/${path}/${image}@2x.webp 2x`)
+    img(src=`img/${path}/${image}.${format}`, srcset= format !== 'svg' && `img/${path}/${image}.${format} 2x`,
+      width= width, height= height, alt= altText)

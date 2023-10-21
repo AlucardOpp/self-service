@@ -1,0 +1,10 @@
+mixin icp-info(data, checkout, select)
+  .icp-info
+    .container
+      fieldset.page-content__container
+        legend.title.title--inner!="ICP Info"
+        each item in data
+          if (item.select === "custom")
+            +custom-select(item)
+          else if (item.select === "choices")
+            +choices-select(item)

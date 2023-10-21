@@ -1,0 +1,10 @@
+mixin link(href, text, type)
+  if (type === "icon")
+    a(class!=`${attributes.class} link link--icon`, href=href)
+      +icon('icon-play', 34, 34)
+      span!=text
+  else if (type === "arrow")
+    a(class!=`${attributes.class} link link--arrow`, href=href)!=text
+      +icon('icon-arrow-right-small', 9, 9)
+  else
+    a.link(class!=attributes.class, href=href)=text

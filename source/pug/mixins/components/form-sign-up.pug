@@ -1,0 +1,20 @@
+mixin form-sign-up()
+  .form-sign-in
+    form(action="#", method="GET")
+      .input-group
+        .input-box
+          label.visually-hidden Email
+          input(type="email", name="email", placeholder="Email adress", required)
+        .input-box
+          label.visually-hidden Password
+          input(type="password", name="password", placeholder="* * * * * * * * * * * *", required)
+      .input-group
+        .input-box
+          label.visually-hidden
+          input(type="text", name="company-name", placeholder="Company name", required)
+        .input-box
+          label.visually-hidden
+          input(type="number", name="company-size", placeholder="Company size", required)
+      +conditions("signin")
+      +btn("sign up", {name: "sign-up", width: 20, height: 20}, "button").form-sign-in__submit.btn.btn--blue.btn--medium.btn--hover-bc-summer-sky-c-white(type="submit")
+      a.form-sign-in__forgot-password.link(href="#") Forgot password?

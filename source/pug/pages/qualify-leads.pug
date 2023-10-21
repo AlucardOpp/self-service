@@ -1,0 +1,33 @@
+extends ../base/layout
+
+block variables
+  - const title = "Qualify Leads — Self Service Marketplace"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "header--shadow"
+  - const hasAuth = true
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = ""
+
+block main
+  main
+    .page-content
+      section.service
+        h1.visually-hidden!="Qualify Leads"
+        .page-content__intro
+          .container
+            .page-content__container
+              .page-content__breadcrumbs
+                +breadcrumbs(breadcrumbsPath, "qualifyLeads")
+              p.page-content__description!="Get a validated list of qualified leads that fits your ideal customer profile."
+              .page-content__buttons
+                +btn("Guidance & Q+A", {name: 'icon-guidance', width: 24, height: 24}, "a").page-content__guidance.btn--medium.btn--blue.btn--hover-bc-summer-sky(href="#")
+                +link("#", "See how it works", "icon").page-content__link
+              +steps(stepsPath, "details").steps--mobile-hidden
+        .service__form
+          form(method="post" action="https://echo.htmlacademy.ru")
+            +email-templates(emailTemplates.qualifyLeads)
+            +icp-info(icpInfo.qualifyLeads)
+            +back-and-payment
+block modals
